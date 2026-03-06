@@ -3,771 +3,742 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xylon Brush – Cepillo Dental Ecológico y Antibacteriano</title>
-  <meta name="description" content="Xylon Brush: cepillo dental ecológico con mango biodegradable de madera de xylon y cerdas antibacterianas. Cuida tu higiene oral y el planeta. Primer lote limitado." />
-
-  <!-- Open Graph -->
+  <title>Xylon Brush – Cepillo Ecológico y Antibacteriano</title>
+  <meta name="description" content="Xylon Brush es el cepillo dental 100% biodegradable y antibacteriano que cuida tu sonrisa y el planeta. Primer lote limitado a 100 unidades." />
   <meta property="og:title" content="Xylon Brush – Higiene Oral Sostenible" />
-  <meta property="og:description" content="Cepillo dental ecológico y antibacteriano. Mango biodegradable, cerdas suaves de alta duración. Primer lote limitado a 100 unidades." />
+  <meta property="og:description" content="Cepillo dental ecológico con mango biodegradable y cerdas antibacterianas. ¡Primer lote limitado!" />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_MX" />
-
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪥</text></svg>" />
-
-  <!-- Google Fonts: Playfair Display + DM Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ─── CSS VARIABLES ──────────────────────────────────────────────── */
+    /* === VARIABLES === */
     :root {
-      --black:      #0d0d0d;
-      --deep:       #161616;
-      --charcoal:   #222222;
-      --mid:        #3a3a3a;
-      --silver:     #8a8a8a;
-      --light:      #d6d6d6;
-      --white:      #f5f5f5;
-      --blue:       #2a7cff;
-      --blue-glow:  rgba(42,124,255,0.18);
-      --blue-dark:  #1a5ce4;
-      --wa:         #25D366;
-      --wa-dark:    #1EB857;
-      --radius:     14px;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body:    'DM Sans', sans-serif;
+      --coal:      #111214;
+      --dark:      #1a1c1f;
+      --mid:       #252729;
+      --border:    rgba(255,255,255,.07);
+      --gray:      #6b7280;
+      --light:     #e8e7e3;
+      --white:     #fafaf9;
+      --blue:      #3b82f6;
+      --blue-dark: #2563eb;
+      --blue-glow: rgba(59,130,246,.15);
+      --green:     #25D366;
+      --green-dark:#1ebe5b;
+      --font-h:    'Syne', sans-serif;
+      --font-b:    'Outfit', sans-serif;
+      --radius:    14px;
     }
 
-    /* ─── RESET ──────────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: var(--font-body);
-      background: var(--black);
-      color: var(--white);
-      line-height: 1.65;
+      background: var(--coal);
+      color: var(--light);
+      font-family: var(--font-b);
+      line-height: 1.7;
       overflow-x: hidden;
     }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    h1,h2,h3,h4 { font-family: var(--font-h); line-height: 1.15; }
 
-    /* ─── TYPOGRAPHY ─────────────────────────────────────────────────── */
-    h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
-    h1 { font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 900; }
-    h2 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 700; }
-    h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
-    p  { font-size: clamp(0.95rem, 2vw, 1.05rem); color: var(--light); font-weight: 300; }
+    /* === LAYOUT === */
+    .container { width: 100%; max-width: 1060px; margin: 0 auto; padding: 0 1.25rem; }
+    .section   { padding: 5rem 0; }
 
-    /* ─── LAYOUT ─────────────────────────────────────────────────────── */
-    .container { max-width: 1060px; margin: 0 auto; padding: 0 1.4rem; }
-    section { padding: 5rem 0; }
-
-    /* ─── PILL LABEL ─────────────────────────────────────────────────── */
-    .pill {
+    /* === TAG LABEL === */
+    .tag {
       display: inline-block;
-      background: var(--blue-glow);
-      border: 1px solid rgba(42,124,255,0.35);
-      color: #6aabff;
-      font-family: var(--font-body);
-      font-size: 0.72rem;
+      font-size: .7rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      margin-bottom: 1.4rem;
+      color: var(--blue);
+      background: var(--blue-glow);
+      border: 1px solid rgba(59,130,246,.28);
+      padding: .28rem .85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
     }
 
-    /* ─── WHATSAPP BUTTON ────────────────────────────────────────────── */
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: .9rem;
+    }
+    .section-subtitle {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 560px;
+    }
+
+    /* === WHATSAPP BUTTON === */
     .btn-wa {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      background: var(--wa);
+      gap: .55rem;
+      background: var(--green);
       color: #fff;
-      font-family: var(--font-body);
-      font-weight: 600;
+      font-family: var(--font-h);
+      font-weight: 700;
       font-size: 1rem;
-      padding: 1rem 2rem;
-      border-radius: var(--radius);
-      border: none;
-      cursor: pointer;
-      transition: background 0.22s, transform 0.18s, box-shadow 0.22s;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.25);
-      text-align: center;
+      padding: .88rem 1.9rem;
+      border-radius: 50px;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      box-shadow: 0 4px 22px rgba(37,211,102,.28);
+      white-space: nowrap;
     }
-    .btn-wa:hover {
-      background: var(--wa-dark);
+    .btn-wa:hover, .btn-wa:focus {
+      background: var(--green-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+      box-shadow: 0 8px 28px rgba(37,211,102,.38);
+      outline: none;
     }
-    .btn-wa:active { transform: translateY(0); }
-    .btn-wa.large {
+    .btn-wa--lg {
       font-size: 1.15rem;
-      padding: 1.2rem 2.6rem;
-      box-shadow: 0 6px 36px rgba(37,211,102,0.3);
+      padding: 1.1rem 2.4rem;
     }
     @media (max-width: 600px) {
-      .btn-wa { width: 100%; justify-content: center; font-size: 1.05rem; }
-      .btn-wa.large { font-size: 1.1rem; padding: 1.1rem 1.4rem; }
+      .btn-wa { width: 100%; justify-content: center; }
     }
 
-    /* ─── DIVIDER ────────────────────────────────────────────────────── */
-    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 0; }
-
-    /* ══════════════════════════════════════════════════════════
-       HERO
-    ══════════════════════════════════════════════════════════ */
-    #hero {
-      position: relative;
-      min-height: 100svh;
+    /* ========================
+       NAVBAR
+    ======================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(17,18,20,.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
       display: flex;
       align-items: center;
-      padding: 6rem 0 5rem;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: var(--font-h);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -.02em;
+    }
+    .nav-logo span { color: var(--blue); }
+    .nav-cta { font-size: .82rem; padding: .5rem 1.2rem; }
+
+    /* ========================
+       HERO
+    ======================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 60px;
+      position: relative;
       overflow: hidden;
     }
-    #hero::before {
-      content: '';
+    .hero-bg {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(42,124,255,0.11) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(42,124,255,0.06) 0%, transparent 60%);
+        radial-gradient(ellipse 700px 500px at 70% 40%, rgba(59,130,246,.09) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 400px at 20% 80%, rgba(37,211,102,.05) 0%, transparent 60%);
       pointer-events: none;
     }
-    #hero::after {
+    .hero-bg::after {
       content: '';
       position: absolute;
-      top: 0; right: 0;
-      width: 45%; height: 100%;
-      background: linear-gradient(135deg, transparent 0%, rgba(42,124,255,0.04) 100%);
-      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
-      pointer-events: none;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 60px 60px;
     }
-    .hero-inner { position: relative; z-index: 1; max-width: 760px; }
-    .hero-kicker {
-      font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 1.2rem;
-      display: flex;
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
       align-items: center;
-      gap: 0.6rem;
+      padding: 4rem 0;
     }
-    .hero-kicker::before {
-      content: '';
-      display: block;
-      width: 28px; height: 1.5px;
-      background: var(--blue);
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-trust { justify-content: center; }
     }
-    .hero-title { margin-bottom: 1.4rem; }
-    .hero-title em { font-style: italic; color: var(--blue); }
+    .hero-title {
+      font-size: clamp(2.6rem, 6.5vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin-bottom: 1.2rem;
+    }
+    .hero-title em { font-style: normal; color: var(--blue); }
     .hero-desc {
-      font-size: clamp(1rem, 2.2vw, 1.15rem);
-      color: var(--silver);
-      max-width: 560px;
-      margin-bottom: 2.4rem;
-      font-weight: 400;
+      color: var(--gray);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 480px;
     }
-    .hero-badges {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 2.6rem;
+      gap: .85rem;
+      margin-bottom: 2rem;
     }
-    .badge {
-      background: var(--charcoal);
-      border: 1px solid var(--mid);
-      border-radius: 999px;
-      padding: 0.4rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--light);
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: .82rem;
+      color: var(--gray);
     }
-    .hero-visual {
-      position: absolute;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: clamp(8rem, 18vw, 18rem);
-      opacity: 0.07;
-      pointer-events: none;
-      animation: float 7s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%,100% { transform: translateY(-50%) rotate(-8deg); }
-      50%      { transform: translateY(calc(-50% - 20px)) rotate(-4deg); }
-    }
+    .hero-trust-item { display: flex; align-items: center; gap: .35rem; }
 
-    /* ══════════════════════════════════════════════════════════
-       URGENCY BAR
-    ══════════════════════════════════════════════════════════ */
-    .urgency-bar {
-      background: linear-gradient(90deg, #1a1a1a 0%, #1e2a3a 50%, #1a1a1a 100%);
-      border-top: 1px solid rgba(42,124,255,0.2);
-      border-bottom: 1px solid rgba(42,124,255,0.2);
-      padding: 1rem 1.4rem;
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .hero-card {
+      background: var(--mid);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 360px;
       text-align: center;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--light);
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+      position: relative;
     }
-    .urgency-bar span { color: var(--blue); font-weight: 700; }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 30%; right: 30%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    }
+    .hero-brush-icon {
+      font-size: 5.5rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 20px rgba(59,130,246,.4));
+    }
+    .hero-card-title { font-family: var(--font-h); font-size: 1.4rem; font-weight: 800; margin-bottom: .4rem; }
+    .hero-card-sub   { font-size: .9rem; color: var(--gray); margin-bottom: 1.4rem; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(37,211,102,.1);
+      border: 1px solid rgba(37,211,102,.25);
+      color: #4ade80;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      margin-bottom: .8rem;
+    }
+    .hero-stock { font-size: .82rem; color: #f59e0b; font-weight: 500; }
+    .hero-stock strong { color: #fbbf24; }
 
-    /* ══════════════════════════════════════════════════════════
-       PROBLEMA
-    ══════════════════════════════════════════════════════════ */
-    #problema { background: var(--deep); }
-    .problema-grid {
+    /* ========================
+       PROBLEM
+    ======================== */
+    #problema { background: var(--dark); }
+    .problem-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
       margin-top: 3rem;
     }
-    @media (max-width: 640px) { .problema-grid { grid-template-columns: 1fr; } }
-    .problema-card {
-      background: var(--charcoal);
-      border: 1px solid var(--mid);
+    @media (max-width: 640px) { .problem-grid { grid-template-columns: 1fr; } }
+    .problem-card {
+      background: var(--coal);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.8rem;
-      position: relative;
-      overflow: hidden;
     }
-    .problema-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, rgba(255,80,80,0.5), transparent);
+    .problem-card .icon { font-size: 2.2rem; margin-bottom: .85rem; }
+    .problem-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .problem-card p  { font-size: .93rem; color: var(--gray); }
+    .problem-solution {
+      margin-top: 3rem;
+      background: linear-gradient(135deg, rgba(59,130,246,.1), rgba(37,211,102,.06));
+      border: 1px solid rgba(59,130,246,.2);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      font-size: 1.08rem;
+      font-weight: 500;
     }
-    .problema-card .icon { font-size: 2.2rem; margin-bottom: 0.9rem; }
-    .problema-card h3 {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-    .problema-card p { font-size: 0.9rem; }
+    .problem-solution strong { color: var(--blue); }
 
-    /* ══════════════════════════════════════════════════════════
-       BENEFICIOS
-    ══════════════════════════════════════════════════════════ */
-    #beneficios { background: var(--black); }
+    /* ========================
+       BENEFITS
+    ======================== */
     .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 1.4rem;
       margin-top: 3rem;
     }
     .benefit-card {
-      background: var(--deep);
-      border: 1px solid var(--mid);
+      background: var(--dark);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.8rem 1.5rem;
-      text-align: center;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      padding: 1.6rem 1.4rem;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
     }
     .benefit-card:hover {
-      border-color: var(--blue);
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px var(--blue-glow);
+      border-color: rgba(59,130,246,.35);
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
     }
-    .benefit-card .icon { font-size: 2.4rem; margin-bottom: 0.9rem; }
-    .benefit-card h3 {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--white);
-    }
+    .benefit-card .icon { font-size: 2.2rem; margin-bottom: .8rem; }
+    .benefit-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
+    .benefit-card p  { font-size: .88rem; color: var(--gray); }
     .benefits-cta { text-align: center; margin-top: 3rem; }
 
-    /* ══════════════════════════════════════════════════════════
-       CÓMO FUNCIONA
-    ══════════════════════════════════════════════════════════ */
-    #como-funciona { background: var(--deep); }
+    /* ========================
+       HOW IT WORKS
+    ======================== */
+    #como { background: var(--dark); }
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 1.6rem;
       margin-top: 3rem;
-      counter-reset: step;
     }
     .step {
-      position: relative;
-      padding: 2rem 1.6rem 1.8rem;
-      background: var(--charcoal);
-      border: 1px solid var(--mid);
+      text-align: center;
+      padding: 2rem 1.4rem;
+      background: var(--coal);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      counter-increment: step;
     }
-    .step::before {
-      content: counter(step, decimal-leading-zero);
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      font-weight: 900;
-      line-height: 1;
-      color: var(--blue);
-      opacity: 0.25;
-      position: absolute;
-      top: 1rem; right: 1.2rem;
-    }
-    .step .step-icon { font-size: 2rem; margin-bottom: 0.9rem; }
-    .step h3 {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-    }
-    .step p { font-size: 0.88rem; }
-
-    /* ══════════════════════════════════════════════════════════
-       TESTIMONIOS
-    ══════════════════════════════════════════════════════════ */
-    #testimonios { background: var(--black); }
-    .testimonio-card {
-      max-width: 700px;
-      margin: 3rem auto 0;
-      background: var(--deep);
-      border: 1px solid var(--mid);
-      border-radius: var(--radius);
-      padding: 2.4rem 2.6rem;
-      position: relative;
-    }
-    .testimonio-card::before {
-      content: '\201C';
-      font-family: var(--font-display);
-      font-size: 6rem;
-      line-height: 0.6;
-      color: var(--blue);
-      opacity: 0.3;
-      position: absolute;
-      top: 1.8rem; left: 1.8rem;
-    }
-    .testimonio-card blockquote {
-      font-size: clamp(1rem, 2.2vw, 1.2rem);
-      font-style: italic;
-      color: var(--light);
-      font-weight: 300;
-      padding-left: 0.5rem;
-    }
-    .testimonio-card cite {
-      display: block;
-      margin-top: 1.4rem;
-      font-size: 0.85rem;
-      font-style: normal;
-      color: var(--silver);
-      font-weight: 500;
-    }
-    .stars { color: #f5c842; font-size: 1rem; margin-bottom: 0.6rem; }
-
-    /* ══════════════════════════════════════════════════════════
-       FAQ
-    ══════════════════════════════════════════════════════════ */
-    #faq { background: var(--deep); }
-    .faq-list {
-      max-width: 720px;
-      margin: 3rem auto 0;
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-family: var(--font-h);
+      font-weight: 800;
+      font-size: 1.2rem;
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      box-shadow: 0 0 18px rgba(59,130,246,.4);
     }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
+    .step p   { font-size: .88rem; color: var(--gray); }
+
+    /* ========================
+       TESTIMONIALS
+    ======================== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+      margin-top: 3rem;
+    }
+    .testimonial {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+    .stars { font-size: 1rem; margin-bottom: .85rem; }
+    .testimonial blockquote {
+      font-size: .97rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .testimonial cite { font-size: .82rem; color: var(--gray); font-style: normal; font-weight: 600; }
+
+    /* ========================
+       FAQ
+    ======================== */
+    #faq { background: var(--dark); }
+    .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; }
     .faq-item {
-      background: var(--charcoal);
-      border: 1px solid var(--mid);
+      background: var(--coal);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
     }
-    .faq-question {
+    .faq-q {
       width: 100%;
+      text-align: left;
       background: none;
       border: none;
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 0.97rem;
+      color: var(--light);
+      font-family: var(--font-h);
       font-weight: 600;
-      text-align: left;
-      padding: 1.3rem 1.6rem;
+      font-size: 1rem;
+      padding: 1.2rem 1.4rem;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
-      transition: color 0.2s;
     }
-    .faq-question:hover { color: var(--blue); }
-    .faq-icon {
-      flex-shrink: 0;
-      width: 22px; height: 22px;
-      border-radius: 50%;
-      border: 1.5px solid currentColor;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      transition: transform 0.3s;
-    }
-    .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--blue); }
-    .faq-answer {
+    .faq-q:hover { color: var(--blue); }
+    .faq-q .arrow { transition: transform .25s; font-style: normal; }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.25s;
-      padding: 0 1.6rem;
+      transition: max-height .3s ease, padding .3s;
+      font-size: .95rem;
+      color: var(--gray);
+      padding: 0 1.4rem;
     }
-    .faq-item.open .faq-answer { max-height: 300px; padding: 0 1.6rem 1.4rem; }
-    .faq-answer p { font-size: 0.92rem; }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 1.4rem 1.2rem; }
 
-    /* ══════════════════════════════════════════════════════════
+    /* ========================
        CTA FINAL
-    ══════════════════════════════════════════════════════════ */
+    ======================== */
     #cta-final {
-      background: linear-gradient(135deg, #0d1a2e 0%, #0d0d0d 60%, #0a1a10 100%);
+      background: linear-gradient(135deg, #0f1117 0%, #131821 100%);
       text-align: center;
-      border-top: 1px solid rgba(42,124,255,0.15);
+      position: relative;
+      overflow: hidden;
     }
-    #cta-final h2 { margin-bottom: 1.2rem; }
-    #cta-final p  { max-width: 520px; margin: 0 auto 2.4rem; }
-    .urgency-note {
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 800px 400px at 50% 50%, rgba(59,130,246,.07), transparent 65%);
+      pointer-events: none;
+    }
+    .urgency-box { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .urgency-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 999px;
-      padding: 0.45rem 1.1rem;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: #f5c842;
-      margin-top: 2rem;
-    }
-
-    /* ══════════════════════════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════════════════════════ */
-    footer {
-      background: var(--black);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 2.5rem 1.4rem;
-      text-align: center;
-    }
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: -0.02em;
-      margin-bottom: 1.2rem;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.4rem;
+      gap: .5rem;
+      background: rgba(251,191,36,.1);
+      border: 1px solid rgba(251,191,36,.3);
+      color: #fbbf24;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35rem 1rem;
+      border-radius: 50px;
       margin-bottom: 1.4rem;
     }
-    .footer-links a {
-      font-size: 0.83rem;
-      color: var(--silver);
-      transition: color 0.2s;
+    .urgency-box h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 1rem; }
+    .urgency-box p  { color: var(--gray); font-size: 1.05rem; margin-bottom: 2rem; }
+    .cta-final-btn  { margin-bottom: 1.2rem; }
+    .cta-note { font-size: .82rem; color: var(--gray); }
+
+    /* ========================
+       FOOTER
+    ======================== */
+    footer {
+      background: var(--coal);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
     }
-    .footer-links a:hover { color: var(--blue); }
-    .footer-copy { font-size: 0.75rem; color: var(--mid); }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .footer-logo { font-family: var(--font-h); font-weight: 800; font-size: 1.1rem; }
+    .footer-logo span { color: var(--blue); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.2rem; font-size: .85rem; color: var(--gray); }
+    .footer-links a:hover { color: var(--light); }
+    .footer-copy { width: 100%; text-align: center; font-size: .78rem; color: var(--gray); margin-top: .8rem; }
 
-    /* ─── SECTION HEADERS ────────────────────────────────────── */
-    .section-header p { margin-top: 0.9rem; max-width: 560px; }
-
-    /* ─── REVEAL ─────────────────────────────────────────────── */
+    /* ========================
+       SCROLL REVEAL
+    ======================== */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      transition: opacity .55s ease, transform .55s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════════════════════ -->
-  <section id="hero">
+  <!-- NAVBAR -->
+  <nav aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <span class="nav-logo">Xylon<span>Brush</span></span>
+      <a class="btn-wa nav-cta"
+         href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20Xylon%20Brush.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n."
+         target="_blank" rel="noopener">
+        💬 Quiero el mío
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Inicio">
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
-      <div class="hero-inner reveal">
-        <div class="hero-kicker">🌿 Innovación Dental Sostenible</div>
-        <h1 class="hero-title">
-          El cepillo que<br />
-          <em>cuida tu boca</em><br />
-          y el planeta.
-        </h1>
-        <p class="hero-desc">
-          Xylon Brush — mango biodegradable de madera de xylon y cerdas antibacterianas suaves. Higiene oral de alto rendimiento con cero culpa ambiental.
+      <div class="hero-inner">
+
+        <div class="hero-text">
+          <p class="tag">🌿 Primer lote limitado — 100 unidades</p>
+          <h1 class="hero-title">
+            Cuida tu sonrisa.<br/>
+            <em>Cuida el planeta.</em>
+          </h1>
+          <p class="hero-desc">
+            Xylon Brush es el cepillo dental ecológico con mango 100% biodegradable y
+            tecnología antibacteriana natural. Higiene oral profesional que reduce tu impacto ambiental.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-wa btn-wa--lg"
+               href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20Xylon%20Brush.%20Quisiera%20reservar%20el%20m%C3%ADo%20antes%20de%20que%20se%20agote."
+               target="_blank" rel="noopener">
+              📱 Quiero mi Xylon Brush
+            </a>
+          </div>
+          <div class="hero-trust">
+            <div class="hero-trust-item"><span>🌿</span><span>Eco-friendly</span></div>
+            <div class="hero-trust-item"><span>🦠</span><span>Antibacteriano</span></div>
+            <div class="hero-trust-item"><span>♻️</span><span>Biodegradable</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-brush-icon" aria-hidden="true">🪥</div>
+            <div class="hero-badge">✔ Disponible ahora</div>
+            <div class="hero-card-title">Xylon Brush</div>
+            <div class="hero-card-sub">Cepillo Ecológico &amp; Antibacteriano</div>
+            <div class="hero-stock">⚠️ Solo <strong>100 unidades</strong> en este lote</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section id="problema" class="section" aria-labelledby="problema-title">
+    <div class="container">
+      <div class="reveal">
+        <p class="tag">El Problema</p>
+        <h2 class="section-title" id="problema-title">¿Sabes lo que usas cada día?</h2>
+        <p class="section-subtitle">
+          Millones de cepillos de plástico terminan en vertederos y océanos cada año.
+          El cepillo que usas hoy podría seguir contaminando por décadas.
         </p>
-        <a
-          href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20el%20Xylon%20Brush.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20y%20conseguir%20el%20m%C3%ADo."
-          class="btn-wa"
-          target="_blank"
-          rel="noopener"
-          aria-label="Quiero mi Xylon Brush - Abrir WhatsApp"
-        >
-          📱 Quiero mi Xylon Brush
-        </a>
-        <div class="hero-badges">
-          <span class="badge">🌱 Biodegradable</span>
-          <span class="badge">🦠 Antibacteriano</span>
-          <span class="badge">💧 Cerdas Suaves</span>
-          <span class="badge">♻️ Eco-friendly</span>
-        </div>
       </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">🪥</div>
-  </section>
-
-  <!-- URGENCY BAR -->
-  <div class="urgency-bar" role="alert">
-    ⚡ <span>Primer lote limitado a 100 unidades</span> con precio de lanzamiento — ¡No te quedes sin el tuyo!
-  </div>
-
-  <hr class="divider" />
-
-  <!-- ══════════════════════════════════════════════════════════
-       PROBLEMA
-  ══════════════════════════════════════════════════════════ -->
-  <section id="problema">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="pill">El problema</div>
-        <h2>Tu cepillo diario tiene<br />un costo oculto.</h2>
-        <p>Millones de cepillos plásticos terminan en vertederos y océanos cada año. Y los convencionales acumulan bacterias mucho antes de que los cambies.</p>
-      </div>
-      <div class="problema-grid">
-        <div class="problema-card reveal">
-          <div class="icon">🗑️</div>
+      <div class="problem-grid reveal">
+        <div class="problem-card">
+          <div class="icon" aria-hidden="true">🌊</div>
           <h3>Contaminación plástica</h3>
-          <p>Cada cepillo de plástico tarda hasta 400 años en degradarse. El tuyo ya dejó huella.</p>
+          <p>Más de 4,700 millones de cepillos plásticos se desechan globalmente cada año, acumulándose en océanos y suelos.</p>
         </div>
-        <div class="problema-card reveal" style="transition-delay:0.1s">
-          <div class="icon">🦠</div>
-          <h3>Bacterias que se acumulan</h3>
-          <p>Los cepillos convencionales retienen humedad y proliferan bacterias, comprometiendo tu salud bucal.</p>
+        <div class="problem-card">
+          <div class="icon" aria-hidden="true">🦠</div>
+          <h3>Bacterias ocultas</h3>
+          <p>Los cepillos convencionales acumulan bacterias con rapidez y pierden efectividad antes de que los cambiemos.</p>
         </div>
-        <div class="problema-card reveal" style="transition-delay:0.2s">
-          <div class="icon">⏳</div>
-          <h3>Cerdas que se desgastan rápido</h3>
-          <p>Muchas marcas usan cerdas de baja calidad que pierden forma y efectividad en pocas semanas.</p>
-        </div>
-        <div class="problema-card reveal" style="transition-delay:0.3s">
-          <div class="icon">💸</div>
-          <h3>Alternativas verdes costosas</h3>
-          <p>Las opciones ecológicas suelen ser caras o poco efectivas. Xylon Brush rompe ese mito.</p>
-        </div>
+      </div>
+      <div class="problem-solution reveal">
+        <p>💡 <strong>Xylon Brush</strong> combina sostenibilidad ambiental con <strong>tecnología antibacteriana natural</strong>, ofreciendo una limpieza profesional mientras reduces tu huella ecológica.</p>
       </div>
     </div>
   </section>
 
-  <hr class="divider" />
-
-  <!-- ══════════════════════════════════════════════════════════
-       BENEFICIOS
-  ══════════════════════════════════════════════════════════ -->
-  <section id="beneficios">
+  <!-- BENEFICIOS -->
+  <section id="beneficios" class="section" aria-labelledby="beneficios-title">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="pill">Beneficios</div>
-        <h2>Todo lo que tu boca<br />y el planeta merecen.</h2>
-        <p>Xylon Brush combina sostenibilidad ambiental con tecnología antibacteriana natural para una limpieza verdaderamente profesional.</p>
+      <div class="reveal">
+        <p class="tag">Beneficios</p>
+        <h2 class="section-title" id="beneficios-title">Todo lo que tu sonrisa merece</h2>
+        <p class="section-subtitle">Diseñado para quienes cuidan su salud bucal sin comprometer el planeta.</p>
       </div>
       <div class="benefits-grid">
         <div class="benefit-card reveal">
-          <div class="icon">🌿</div>
-          <h3>Mango 100% biodegradable y ecológico</h3>
+          <div class="icon" aria-hidden="true">🌳</div>
+          <h3>100% Biodegradable</h3>
+          <p>Mango de madera de xylon que se descompone naturalmente, sin dejar residuos plásticos.</p>
         </div>
-        <div class="benefit-card reveal" style="transition-delay:0.08s">
-          <div class="icon">🦷</div>
-          <h3>Cerdas suaves que protegen encías sensibles</h3>
+        <div class="benefit-card reveal">
+          <div class="icon" aria-hidden="true">🦷</div>
+          <h3>Cerdas Protectoras</h3>
+          <p>Cerdas suaves de alta duración que cuidan encías sensibles con cada cepillado.</p>
         </div>
-        <div class="benefit-card reveal" style="transition-delay:0.16s">
-          <div class="icon">🛡️</div>
-          <h3>Propiedades antibacterianas naturales</h3>
+        <div class="benefit-card reveal">
+          <div class="icon" aria-hidden="true">🛡️</div>
+          <h3>Antibacteriano Natural</h3>
+          <p>Propiedades antibacterianas inherentes a la madera que mantienen el cepillo más limpio por más tiempo.</p>
         </div>
-        <div class="benefit-card reveal" style="transition-delay:0.24s">
-          <div class="icon">✋</div>
-          <h3>Diseño ergonómico y moderno</h3>
+        <div class="benefit-card reveal">
+          <div class="icon" aria-hidden="true">✋</div>
+          <h3>Diseño Ergonómico</h3>
+          <p>Agarre cómodo y equilibrado para un cepillado eficaz y sin esfuerzo en adultos y jóvenes.</p>
         </div>
-        <div class="benefit-card reveal" style="transition-delay:0.32s">
-          <div class="icon">♻️</div>
-          <h3>Reduce tu huella de plástico cada día</h3>
+        <div class="benefit-card reveal">
+          <div class="icon" aria-hidden="true">♻️</div>
+          <h3>Menos Plástico</h3>
+          <p>Cada Xylon Brush que usas es un cepillo plástico menos en el océano. Pequeño gesto, gran impacto.</p>
         </div>
       </div>
-      <!-- CTA MEDIO -->
       <div class="benefits-cta reveal">
-        <a
-          href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20el%20Xylon%20Brush.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20y%20conseguir%20el%20m%C3%ADo."
-          class="btn-wa"
-          target="_blank"
-          rel="noopener"
-          aria-label="Quiero mi Xylon Brush - Abrir WhatsApp"
-        >
+        <a class="btn-wa"
+           href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20Xylon%20Brush.%20Me%20gustar%C3%ADa%20reservar%20una%20unidad%20del%20primer%20lote."
+           target="_blank" rel="noopener">
           📱 Quiero mi Xylon Brush
         </a>
       </div>
     </div>
   </section>
 
-  <hr class="divider" />
-
-  <!-- ══════════════════════════════════════════════════════════
-       CÓMO FUNCIONA
-  ══════════════════════════════════════════════════════════ -->
-  <section id="como-funciona">
+  <!-- CÓMO FUNCIONA -->
+  <section id="como" class="section" aria-labelledby="como-title">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="pill">Cómo funciona</div>
-        <h2>De tu pedido a<br />tu primera cepillada.</h2>
+      <div class="reveal">
+        <p class="tag">Cómo Funciona</p>
+        <h2 class="section-title" id="como-title">Tan sencillo como cepillarte</h2>
+        <p class="section-subtitle">Consigue tu Xylon Brush y empieza a marcar la diferencia desde hoy.</p>
       </div>
       <div class="steps">
         <div class="step reveal">
-          <div class="step-icon">💬</div>
-          <h3>Escríbenos por WhatsApp</h3>
-          <p>Mándanos un mensaje y te confirmamos disponibilidad en tu lote de lanzamiento.</p>
+          <div class="step-num" aria-label="Paso 1">1</div>
+          <h3>Contáctanos por WhatsApp</h3>
+          <p>Escríbenos con un clic. Nuestro equipo te atiende de inmediato y responde todas tus dudas.</p>
         </div>
-        <div class="step reveal" style="transition-delay:0.1s">
-          <div class="step-icon">📦</div>
-          <h3>Elige tu cantidad</h3>
-          <p>Individual o familiar. Cuéntanos cuántos Xylon Brush necesitas y te damos la mejor opción.</p>
+        <div class="step reveal">
+          <div class="step-num" aria-label="Paso 2">2</div>
+          <h3>Reserva tu unidad</h3>
+          <p>El primer lote es de solo 100 piezas con precio de lanzamiento. Reserva la tuya antes de que se agoten.</p>
         </div>
-        <div class="step reveal" style="transition-delay:0.2s">
-          <div class="step-icon">🚚</div>
+        <div class="step reveal">
+          <div class="step-num" aria-label="Paso 3">3</div>
           <h3>Recíbelo en casa</h3>
-          <p>Coordinamos el envío o entrega directa. Rápido, seguro y con empaque eco-friendly.</p>
+          <p>Coordinamos la entrega de forma rápida y segura directo a tu puerta.</p>
         </div>
-        <div class="step reveal" style="transition-delay:0.3s">
-          <div class="step-icon">🌍</div>
-          <h3>Cepilla con propósito</h3>
-          <p>Cada uso es un paso hacia una sonrisa más sana y un planeta con menos plástico.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- ══════════════════════════════════════════════════════════
-       TESTIMONIOS
-  ══════════════════════════════════════════════════════════ -->
-  <section id="testimonios">
-    <div class="container" style="text-align:center;">
-      <div class="section-header reveal">
-        <div class="pill">Lo que dicen</div>
-        <h2>Personas reales,<br />resultados reales.</h2>
-      </div>
-      <div class="testimonio-card reveal" style="text-align:left">
-        <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-        <blockquote>
-          "Me encanta saber que estoy cuidando mis dientes y el planeta al mismo tiempo."
-        </blockquote>
-        <cite>— Laura M., usuaria Xylon Brush</cite>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- ══════════════════════════════════════════════════════════
-       FAQ
-  ══════════════════════════════════════════════════════════ -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-header reveal" style="text-align:center; margin:0 auto;">
-        <div class="pill">Preguntas frecuentes</div>
-        <h2>¿Tienes dudas?<br />Las respondemos.</h2>
-      </div>
-      <div class="faq-list" role="list">
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-question" aria-expanded="false">
-            ¿Cuánto tiempo dura el cepillo?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Xylon Brush está diseñado para durar entre 2 y 3 meses con uso regular, igual que un cepillo convencional. Su mango de madera de xylon mantiene su estructura e integridad durante toda la vida útil.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal" style="transition-delay:0.08s" role="listitem">
-          <button class="faq-question" aria-expanded="false">
-            ¿Las cerdas son realmente antibacterianas?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sí. Las cerdas de Xylon Brush incorporan propiedades antibacterianas naturales que inhiben el crecimiento de microorganismos entre usos, manteniéndolas más limpias e higiénicas que las cerdas estándar.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal" style="transition-delay:0.16s" role="listitem">
-          <button class="faq-question" aria-expanded="false">
-            ¿Es apto para niños?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Xylon Brush fue diseñado principalmente para adultos, pero sus cerdas suaves pueden ser adecuadas para niños mayores de 6 años bajo supervisión. Escríbenos para recomendarte la mejor opción para tu familia.</p>
-          </div>
+        <div class="step reveal">
+          <div class="step-num" aria-label="Paso 4">4</div>
+          <h3>Sonríe con impacto</h3>
+          <p>Disfruta de higiene oral superior mientras contribuyes a un planeta más limpio cada día.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="divider" />
-
-  <!-- ══════════════════════════════════════════════════════════
-       CTA FINAL
-  ══════════════════════════════════════════════════════════ -->
-  <section id="cta-final">
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" class="section" aria-labelledby="testimonios-title">
     <div class="container">
       <div class="reveal">
-        <div class="pill">Únete al primer lote</div>
-        <h2>Es el momento de<br />cambiar tu cepillo.</h2>
-        <p>
-          Forma parte del movimiento que cuida tu salud bucal <em>y</em> reduce el plástico.
-          Primer lote limitado — precio de lanzamiento exclusivo.
-        </p>
-        <!-- CTA FINAL (el más grande) -->
-        <a
-          href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20el%20Xylon%20Brush.%20Me%20gustar%C3%ADa%20reservar%20el%20m%C3%ADo%20del%20primer%20lote%20con%20precio%20de%20lanzamiento."
-          class="btn-wa large"
-          target="_blank"
-          rel="noopener"
-          aria-label="Quiero mi Xylon Brush del primer lote - Abrir WhatsApp"
-        >
-          📱 Quiero mi Xylon Brush
-        </a>
-        <div class="urgency-note">
-          ⚡ Solo 100 unidades en el primer lote — precio de lanzamiento
+        <p class="tag">Testimonios</p>
+        <h2 class="section-title" id="testimonios-title">Lo que dicen quienes ya lo usan</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 de 5 estrellas">⭐⭐⭐⭐⭐</div>
+          <blockquote>"Me encanta saber que estoy cuidando mis dientes y el planeta al mismo tiempo."</blockquote>
+          <cite>— Laura M.</cite>
+        </div>
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 de 5 estrellas">⭐⭐⭐⭐⭐</div>
+          <blockquote>"Nunca pensé que cambiar mi cepillo pudiera ser un acto tan consciente. Xylon Brush lo hace fácil."</blockquote>
+          <cite>— Rodrigo S.</cite>
+        </div>
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 de 5 estrellas">⭐⭐⭐⭐⭐</div>
+          <blockquote>"Las cerdas son súper suaves para mis encías y el diseño se ve muy premium. ¡Lo recomiendo al 100%!"</blockquote>
+          <cite>— Sofía V.</cite>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════════════════════ -->
-  <footer>
-    <div class="footer-logo">🪥 Xylon Brush</div>
-    <nav class="footer-links" aria-label="Contacto y redes sociales">
-      <a href="/cdn-cgi/l/email-protection#dfa7a6b3b0b1bdadaaacb79fb8b2beb6b3f1bcb0b2">✉️ <span class="__cf_email__" data-cfemail="8ff7f6e3e0e1edfdfafce7cfe8e2eee6e3a1ece0e2">[email&#160;protected]</span></a>
-      <a href="https://instagram.com/xylonbrush" target="_blank" rel="noopener">📷 @xylonbrush</a>
-      <a href="https://facebook.com/XylonBrush" target="_blank" rel="noopener">👤 Xylon Brush</a>
-      <a href="https://wa.me/524631035965" target="_blank" rel="noopener">💬 WhatsApp</a>
-    </nav>
-    <p class="footer-copy">© 2025 Xylon Brush · Equipo Xylon Innovación Dental. Todos los derechos reservados.</p>
+  <!-- FAQ -->
+  <section id="faq" class="section" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="reveal">
+        <p class="tag">Preguntas Frecuentes</p>
+        <h2 class="section-title" id="faq-title">Resolvemos tus dudas</h2>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
+            ¿Cuánto tiempo dura el cepillo?
+            <i class="arrow" aria-hidden="true">▾</i>
+          </button>
+          <div class="faq-a" id="faq-a1" role="region">
+            Xylon Brush dura entre 2 y 3 meses con uso regular, igual que un cepillo convencional de calidad. Las cerdas de alta duración mantienen su efectividad durante todo ese período.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
+            ¿Las cerdas son realmente antibacterianas?
+            <i class="arrow" aria-hidden="true">▾</i>
+          </button>
+          <div class="faq-a" id="faq-a2" role="region">
+            Sí. La madera de xylon tiene propiedades antibacterianas naturales que inhiben el crecimiento de bacterias en el mango. Las cerdas están fabricadas con materiales de alta higiene que no retienen humedad ni bacterias.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
+            ¿Es apto para niños?
+            <i class="arrow" aria-hidden="true">▾</i>
+          </button>
+          <div class="faq-a" id="faq-a3" role="region">
+            Esta versión está diseñada para adultos y jóvenes. Estamos trabajando en una versión específica para niños. ¡Escríbenos para saber cuándo estará disponible!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="urgency-box">
+        <div class="urgency-badge reveal">🔥 Oferta de lanzamiento · Lote limitado</div>
+        <h2 class="reveal" id="cta-title">Solo 100 unidades en este primer lote</h2>
+        <p class="reveal">
+          El precio de lanzamiento es exclusivo para quienes se registren ahora.
+          Una vez agotado el lote, el precio sube. No dejes pasar tu lugar.
+        </p>
+        <div class="cta-final-btn reveal">
+          <a class="btn-wa btn-wa--lg"
+             href="https://wa.me/524631035965?text=Hola%2C%20quiero%20reservar%20mi%20Xylon%20Brush%20del%20primer%20lote%20al%20precio%20de%20lanzamiento."
+             target="_blank" rel="noopener">
+            📱 Reservar mi Xylon Brush ahora
+          </a>
+        </div>
+        <p class="cta-note reveal">Sin compromiso · Solo por WhatsApp · Atención inmediata</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Xylon<span>Brush</span></div>
+        <div class="footer-links">
+          <a href="mailto:xylonbrush@gmail.com">✉ xylonbrush@gmail.com</a>
+          <a href="https://instagram.com/xylonbrush" target="_blank" rel="noopener">📸 @xylonbrush</a>
+          <a href="https://facebook.com/xylonbrush" target="_blank" rel="noopener">👤 Xylon Brush</a>
+          <a href="https://wa.me/524631035965" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Xylon Brush · Equipo Xylon Innovación Dental. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <!-- ══════════════════════════════════════════════════════════
-       JAVASCRIPT
-  ══════════════════════════════════════════════════════════ -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Scroll reveal
+  <script>
+    // Scroll Reveal
     const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -776,14 +747,25 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1 });
     revealEls.forEach(el => observer.observe(el));
 
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(btn => {
+    // FAQ Accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item').forEach(i => {
           i.classList.remove('open');
-          i.querySel
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
