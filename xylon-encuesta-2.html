@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xylon Brush – Encuesta Rápida</title>
+  <meta name="description" content="Responde 5 preguntas rápidas y ayúdanos a mejorar Xylon Brush para ti." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --coal:   #0e0f11;
+      --dark:   #16181b;
+      --card:   #1e2025;
+      --border: rgba(255,255,255,.08);
+      --gray:   #6b7280;
+      --light:  #e8e7e3;
+      --blue:   #3b82f6;
+      --blue-g: rgba(59,130,246,.12);
+      --green:  #25D366;
+      --accent: #60a5fa;
+      --font-h: 'Syne', sans-serif;
+      --font-b: 'Outfit', sans-serif;
+      --r:      16px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--coal);
+      color: var(--light);
+      font-family: var(--font-b);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem;
+    }
+
+    /* === WRAPPER === */
+    .quiz-wrapper {
+      width: 100%;
+      max-width: 540px;
+    }
+
+    /* === HEADER === */
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .quiz-logo {
+      font-family: var(--font-h);
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: .5rem;
+    }
+    .quiz-logo span { color: var(--blue); }
+    .quiz-intro {
+      font-size: .92rem;
+      color: var(--gray);
+    }
+
+    /* === PROGRESS === */
+    .progress-bar-wrap {
+      background: rgba(255,255,255,.06);
+      border-radius: 50px;
+      height: 5px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), #818cf8);
+      border-radius: 50px;
+      transition: width .4s ease;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .75rem;
+      color: var(--gray);
+      margin-bottom: .5rem;
+    }
+
+    /* === QUESTION CARD === */
+    .q-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .q-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 25%; right: 25%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    }
+    .q-number {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-g);
+      border: 1px solid rgba(59,130,246,.25);
+      padding: .25rem .7rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .q-text {
+      font-family: var(--font-h);
+      font-size: 1.22rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1.6rem;
+    }
+
+    /* === OPTIONS === */
+    .options { display: flex; flex-direction: column; gap: .75rem; }
+    .option {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: .9rem 1.1rem;
+      cursor: pointer;
+      transition: background .18s, border-color .18s, transform .15s;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .option:hover {
+      background: rgba(59,130,246,.08);
+      border-color: rgba(59,130,246,.3);
+    }
+    .option:active { transform: scale(.98); }
+    .option.selected {
+      background: rgba(59,130,246,.14);
+      border-color: var(--blue);
+    }
+    .option.correct {
+      background: rgba(37,211,102,.1);
+      border-color: rgba(37,211,102,.5);
+    }
+    .opt-letter {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.07);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-h);
+      font-weight: 700;
+      font-size: .85rem;
+      flex-shrink: 0;
+      transition: background .18s, border-color .18s;
+    }
+    .option.selected .opt-letter {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .opt-text {
+      font-size: .97rem;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+    .opt-emoji { font-size: 1.1rem; margin-left: auto; padding-left: .5rem; flex-shrink: 0; }
+
+    /* === NAV BUTTON === */
+    .btn-next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      margin-top: 1.6rem;
+      padding: .95rem;
+      border: none;
+      border-radius: 50px;
+      background: var(--blue);
+      color: #fff;
+      font-family: var(--font-h);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background .2s, transform .2s, opacity .2s;
+      box-shadow: 0 4px 20px rgba(59,130,246,.3);
+    }
+    .btn-next:hover:not(:disabled) {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(59,130,246,.4);
+    }
+    .btn-next:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* === SLIDE TRANSITIONS === */
+    .q-slide { display: none; }
+    .q-slide.active {
+      display: block;
+      animation: fadeUp .35s ease forwards;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === RESULT SCREEN === */
+    #result-screen {
+      display: none;
+      text-align: center;
+      animation: fadeUp .4s ease forwards;
+    }
+    #result-screen.active { display: block; }
+    .result-icon { font-size: 4.5rem; margin-bottom: 1rem; line-height: 1; }
+    .result-title {
+      font-family: var(--font-h);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: .6rem;
+    }
+    .result-sub {
+      color: var(--gray);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .result-summary {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.4rem;
+      margin-bottom: 1.8rem;
+      text-align: left;
+    }
+    .result-summary h3 {
+      font-family: var(--font-h);
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 1rem;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: .55rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .9rem;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-q { color: var(--gray); flex: 1; }
+    .result-a { font-weight: 600; color: var(--light); text-align: right; }
+
+    .btn-wa-result {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      width: 100%;
+      padding: 1rem 1.8rem;
+      border-radius: 50px;
+      background: var(--green);
+      color: #fff;
+      font-family: var(--font-h);
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 4px 22px rgba(37,211,102,.3);
+      text-decoration: none;
+    }
+    .btn-wa-result:hover {
+      background: #1ebe5b;
+      transform: translateY(-2px);
+    }
+    .result-note { font-size: .78rem; color: var(--gray); margin-top: .85rem; }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-wrapper">
+
+    <!-- Header -->
+    <div class="quiz-header">
+      <div class="quiz-logo">Xylon<span>Brush</span> 🪥</div>
+      <p class="quiz-intro">5 preguntas rápidas · Solo toca tu respuesta</p>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-label">
+      <span id="prog-text">Pregunta 1 de 5</span>
+      <span id="prog-pct">0%</span>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="prog-fill" style="width:0%"></div>
+    </div>
+
+    <!-- === QUESTIONS === -->
+    <div class="q-card" id="questions-container">
+
+      <!-- Q1 -->
+      <div class="q-slide active" data-q="0">
+        <div class="q-number">Pregunta 1</div>
+        <div class="q-text">¿Con qué frecuencia cambias tu cepillo dental?</div>
+        <div class="options">
+          <div class="option" data-val="Cada 1-2 meses">
+            <div class="opt-letter">A</div>
+            <div class="opt-text">Cada 1–2 meses</div>
+            <div class="opt-emoji">✅</div>
+          </div>
+          <div class="option" data-val="Cada 3-4 meses">
+            <div class="opt-letter">B</div>
+            <div class="opt-text">Cada 3–4 meses</div>
+          </div>
+          <div class="option" data-val="Cada 6 meses o más">
+            <div class="opt-letter">C</div>
+            <div class="opt-text">Cada 6 meses o más</div>
+          </div>
+          <div class="option" data-val="Sin horario fijo">
+            <div class="opt-letter">D</div>
+            <div class="opt-text">No tengo un horario fijo</div>
+          </div>
+        </div>
+        <button class="btn-next" disabled>Siguiente →</button>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-slide" data-q="1">
+        <div class="q-number">Pregunta 2</div>
+        <div class="q-text">¿Qué tan importante es para ti usar productos ecológicos?</div>
+        <div class="options">
+          <div class="option" data-val="Muy importante, lo busco activamente">
+            <div class="opt-letter">A</div>
+            <div class="opt-text">Muy importante, lo busco activamente</div>
+            <div class="opt-emoji">🌿</div>
+          </div>
+          <div class="option" data-val="Me importa pero no es decisivo">
+            <div class="opt-letter">B</div>
+            <div class="opt-text">Me importa, pero no es decisivo</div>
+          </div>
+          <div class="option" data-val="Me es indiferente">
+            <div class="opt-letter">C</div>
+            <div class="opt-text">Me es indiferente</div>
+          </div>
+          <div class="option" data-val="No lo había considerado">
+            <div class="opt-letter">D</div>
+            <div class="opt-text">No lo había considerado</div>
+          </div>
+        </div>
+        <button class="btn-next" disabled>Siguiente →</button>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-slide" data-q="2">
+        <div class="q-number">Pregunta 3</div>
+        <div class="q-text">¿Cuánto pagarías por un cepillo ecológico y antibacteriano?</div>
+        <div class="options">
+          <div class="option" data-val="$100 - $500 MXN">
+            <div class="opt-letter">A</div>
+            <div class="opt-text">$100 – $500 MXN</div>
+          </div>
+          <div class="option" data-val="$501 - $1,500 MXN">
+            <div class="opt-letter">B</div>
+            <div class="opt-text">$501 – $1,500 MXN</div>
+          </div>
+          <div class="option" data-val="$1,501 - $5,000 MXN">
+            <div class="opt-letter">C</div>
+            <div class="opt-text">$1,501 – $5,000 MXN</div>
+          </div>
+          <div class="option" data-val="Más de $5,000 MXN">
+            <div class="opt-letter">D</div>
+            <div class="opt-text">Más de $5,000 MXN</div>
+            <div class="opt-emoji">💎</div>
+          </div>
+        </div>
+        <button class="btn-next" disabled>Siguiente →</button>
+      </div>
+
+      <!-- Q4 -->
+      <div class="q-slide" data-q="3">
+        <div class="q-number">Pregunta 4</div>
+        <div class="q-text">¿Qué beneficio de Xylon Brush te convenció más?</div>
+        <div class="options">
+          <div class="option" data-val="Mango 100% biodegradable">
+            <div class="opt-letter">A</div>
+            <div class="opt-text">Mango 100% biodegradable</div>
+            <div class="opt-emoji">🌳</div>
+          </div>
+          <div class="option" data-val="Propiedades antibacterianas">
+            <div class="opt-letter">B</div>
+            <div class="opt-text">Propiedades antibacterianas</div>
+            <div class="opt-emoji">🛡️</div>
+          </div>
+          <div class="option" data-val="Cerdas suaves para encías sensibles">
+            <div class="opt-letter">C</div>
+            <div class="opt-text">Cerdas suaves para encías sensibles</div>
+            <div class="opt-emoji">🦷</div>
+          </div>
+          <div class="option" data-val="Contribuir a reducir el plástico">
+            <div class="opt-letter">D</div>
+            <div class="opt-text">Contribuir a reducir el plástico</div>
+            <div class="opt-emoji">♻️</div>
+          </div>
+        </div>
+        <button class="btn-next" disabled>Siguiente →</button>
+      </div>
+
+      <!-- Q5 -->
+      <div class="q-slide" data-q="4">
+        <div class="q-number">Pregunta 5</div>
+        <div class="q-text">¿Qué tan probable es que compres Xylon Brush si está disponible esta semana?</div>
+        <div class="options">
+          <div class="option" data-val="Lo compro seguro">
+            <div class="opt-letter">A</div>
+            <div class="opt-text">Lo compro seguro</div>
+            <div class="opt-emoji">🔥</div>
+          </div>
+          <div class="option" data-val="Probablemente sí">
+            <div class="opt-letter">B</div>
+            <div class="opt-text">Probablemente sí</div>
+          </div>
+          <div class="option" data-val="Necesito más información">
+            <div class="opt-letter">C</div>
+            <div class="opt-text">Necesito más información</div>
+          </div>
+          <div class="option" data-val="Solo estaba explorando">
+            <div class="opt-letter">D</div>
+            <div class="opt-text">Solo estaba explorando</div>
+          </div>
+        </div>
+        <button class="btn-next" disabled>Ver mis resultados ✓</button>
+      </div>
+
+    </div><!-- /q-card -->
+
+    <!-- === RESULT SCREEN === -->
+    <div id="result-screen">
+      <div class="result-icon">🎉</div>
+      <div class="result-title">¡Gracias por tu tiempo!</div>
+      <p class="result-sub">Tu opinión nos ayuda a construir el mejor cepillo ecológico para ti. Aquí un resumen de tus respuestas:</p>
+
+      <div class="result-summary">
+        <h3>Tus respuestas</h3>
+        <div id="summary-rows"></div>
+      </div>
+
+      <a id="wa-result-btn" class="btn-wa-result"
+         href="#" target="_blank" rel="noopener">
+        📱 Enviar mis respuestas por WhatsApp
+      </a>
+      <p class="result-note">Al tocar el botón abrirás WhatsApp con tus respuestas listas para enviar.</p>
+    </div>
+
+  </div><!-- /quiz-wrapper -->
+
+  <script>
+    const questions = [
+      "¿Con qué frecuencia cambias tu cepillo dental?",
+      "¿Qué tan importante es para ti usar productos ecológicos?",
+      "¿Cuánto pagarías por un cepillo ecológico y antibacteriano?",
+      "¿Qué beneficio de Xylon Brush te convenció más?",
+      "¿Qué tan probable es que compres Xylon Brush esta semana?"
+    ];
+
+    const shortQ = [
+      "Frecuencia de cambio",
+      "Importancia ecológica",
+      "Precio dispuesto a pagar",
+      "Beneficio favorito",
+      "Probabilidad de compra"
+    ];
+
+    const slides   = document.querySelectorAll('.q-slide');
+    const progFill = document.getElementById('prog-fill');
+    const progText = document.getElementById('prog-text');
+    const progPct  = document.getElementById('prog-pct');
+    const resultScreen = document.getElementById('result-screen');
+    const qContainer   = document.getElementById('questions-container');
+
+    let current = 0;
+    const answers = new Array(questions.length).fill(null);
+
+    function updateProgress(idx) {
+      const pct = Math.round((idx / questions.length) * 100);
+      progFill.style.width = pct + '%';
+      progText.textContent = idx < questions.length
+        ? `Pregunta ${idx + 1} de ${questions.length}`
+        : `¡Completado!`;
+      progPct.textContent  = pct + '%';
+    }
+
+    function activateSlide(idx) {
+      slides.forEach(s => s.classList.remove('active'));
+      if (idx < slides.length) {
+        slides[idx].classList.add('active');
+      }
+      updateProgress(idx);
+    }
+
+    // Option click handler
+    slides.forEach((slide, qIdx) => {
+      const opts = slide.querySelectorAll('.option');
+      const btn  = slide.querySelector('.btn-next');
+
+      opts.forEach(opt => {
+        opt.addEventListener('click', () => {
+          opts.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          answers[qIdx] = opt.dataset.val;
+          btn.disabled = false;
+        });
+      });
+
+      btn.addEventListener('click', () => {
+        if (!answers[qIdx]) return;
+        current++;
+        if (current < slides.length) {
+          activateSlide(current);
+        } else {
+          showResult();
+        }
+      });
+    });
+
+    function showResult() {
+      qContainer.style.display = 'none';
+      resultScreen.classList.add('active');
+      updateProgress(questions.length);
+
+      // Build summary
+      const rows = document.getElementById('summary-rows');
+      rows.innerHTML = '';
+      shortQ.forEach((q, i) => {
+        const row = document.createElement('div');
+        row.className = 'result-row';
+        row.innerHTML = `<span class="result-q">${q}</span><span class="result-a">${answers[i] || '—'}</span>`;
+        rows.appendChild(row);
+      });
+
+      // Build WhatsApp message
+      let msg = `Hola, completé la encuesta de Xylon Brush 🪥\n\n`;
+      shortQ.forEach((q, i) => {
+        msg += `*${q}:* ${answers[i]}\n`;
+      });
+      msg += `\n¡Me gustaría saber más sobre el producto!`;
+
+      const encoded = encodeURIComponent(msg);
+      document.getElementById('wa-result-btn').href =
+        `https://wa.me/524631035965?text=${encoded}`;
+    }
+
+    // Init
+    activateSlide(0);
+  </script>
+
+</body>
+</html>
