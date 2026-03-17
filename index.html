@@ -3,610 +3,366 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xylon Brush – Cepillo Ecológico y Antibacteriano</title>
-  <meta name="description" content="Xylon Brush es el cepillo dental 100% biodegradable y antibacteriano que cuida tu sonrisa y el planeta. Primer lote limitado a 100 unidades." />
-  <meta property="og:title" content="Xylon Brush – Higiene Oral Sostenible" />
-  <meta property="og:description" content="Cepillo dental ecológico con mango biodegradable y cerdas antibacterianas. ¡Primer lote limitado!" />
+  <title>Xylon Brush – Cepillo Inteligente para Higiene Dental</title>
+  <meta name="description" content="XylonBrush es el cepillo dental inteligente diseñado para tratamientos odontológicos. Tecnología avanzada para estudiantes, pacientes y profesionales." />
+  <meta property="og:title" content="Xylon Brush – Higiene Oral Inteligente" />
+  <meta property="og:description" content="Cepillo dental con funciones inteligentes para tratamientos odontológicos. Primer lote limitado." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪥</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
   <style>
-    /* === VARIABLES === */
     :root {
-      --coal:      #111214;
-      --dark:      #1a1c1f;
-      --mid:       #252729;
-      --border:    rgba(255,255,255,.07);
-      --gray:      #6b7280;
-      --light:     #e8e7e3;
-      --white:     #fafaf9;
-      --blue:      #3b82f6;
-      --blue-dark: #2563eb;
-      --blue-glow: rgba(59,130,246,.15);
-      --green:     #25D366;
-      --green-dark:#1ebe5b;
-      --font-h:    'Syne', sans-serif;
-      --font-b:    'Outfit', sans-serif;
-      --radius:    14px;
+      --coal:#111214;--dark:#1a1c1f;--mid:#252729;
+      --border:rgba(255,255,255,.07);--gray:#6b7280;
+      --light:#e8e7e3;--white:#fafaf9;
+      --blue:#3b82f6;--blue-dark:#2563eb;--blue-glow:rgba(59,130,246,.15);
+      --green:#25D366;--green-dark:#1ebe5b;
+      --font-h:'Syne',sans-serif;--font-b:'Outfit',sans-serif;--radius:14px;
     }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--coal);color:var(--light);font-family:var(--font-b);line-height:1.7;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    h1,h2,h3,h4{font-family:var(--font-h);line-height:1.15;}
+    .container{width:100%;max-width:1060px;margin:0 auto;padding:0 1.25rem;}
+    .section{padding:5rem 0;}
+    .tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-glow);border:1px solid rgba(59,130,246,.28);padding:.28rem .85rem;border-radius:50px;margin-bottom:1rem;}
+    .section-title{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:.9rem;}
+    .section-subtitle{color:var(--gray);font-size:1.05rem;max-width:560px;}
+    .btn-wa{display:inline-flex;align-items:center;gap:.55rem;background:var(--green);color:#fff;font-family:var(--font-h);font-weight:700;font-size:1rem;padding:.88rem 1.9rem;border-radius:50px;transition:transform .2s,box-shadow .2s,background .2s;box-shadow:0 4px 22px rgba(37,211,102,.28);white-space:nowrap;}
+    .btn-wa:hover,.btn-wa:focus{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.38);outline:none;}
+    .btn-wa--lg{font-size:1.15rem;padding:1.1rem 2.4rem;}
+    @media(max-width:600px){.btn-wa{width:100%;justify-content:center;}}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--coal);
-      color: var(--light);
-      font-family: var(--font-b);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    h1,h2,h3,h4 { font-family: var(--font-h); line-height: 1.15; }
+    /* NAVBAR */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(17,18,20,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:var(--font-h);font-weight:800;font-size:1.25rem;letter-spacing:-.02em;}
+    .nav-logo span{color:var(--blue);}
+    .nav-cta{font-size:.82rem;padding:.5rem 1.2rem;}
+    .version-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .7rem;border-radius:50px;border:1px solid;}
+    .version-badge.v-a{background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.3);color:#93c5fd;}
+    .version-badge.v-b{background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.3);color:#4ade80;}
 
-    /* === LAYOUT === */
-    .container { width: 100%; max-width: 1060px; margin: 0 auto; padding: 0 1.25rem; }
-    .section   { padding: 5rem 0; }
+    /* HERO */
+    #hero{min-height:100vh;display:flex;align-items:center;padding-top:60px;position:relative;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 70% 40%,rgba(59,130,246,.09) 0%,transparent 70%),radial-gradient(ellipse 400px 400px at 20% 80%,rgba(37,211,102,.05) 0%,transparent 60%);pointer-events:none;}
+    .hero-bg::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding:4rem 0;}
+    @media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center;}.hero-actions{justify-content:center;}.hero-trust{justify-content:center;}}
+    .hero-title{font-size:clamp(2.6rem,6.5vw,4.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1.2rem;}
+    .hero-title em{font-style:normal;color:var(--blue);}
+    .hero-desc{color:var(--gray);font-size:1.1rem;margin-bottom:2rem;max-width:480px;}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:2rem;}
+    .hero-trust{display:flex;align-items:center;gap:1rem;font-size:.82rem;color:var(--gray);}
+    .hero-trust-item{display:flex;align-items:center;gap:.35rem;}
+    .hero-visual{display:flex;justify-content:center;align-items:center;}
+    .hero-card{background:var(--mid);border:1px solid var(--border);border-radius:24px;padding:2.5rem 2rem;width:100%;max-width:360px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);position:relative;}
+    .hero-card::before{content:'';position:absolute;top:-1px;left:30%;right:30%;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);}
+    .hero-brush-icon{font-size:5.5rem;line-height:1;margin-bottom:1rem;filter:drop-shadow(0 0 20px rgba(59,130,246,.4));}
+    .hero-card-title{font-family:var(--font-h);font-size:1.4rem;font-weight:800;margin-bottom:.4rem;}
+    .hero-card-sub{font-size:.9rem;color:var(--gray);margin-bottom:1rem;}
+    .hero-badge{display:inline-block;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.25);color:#4ade80;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:50px;margin-bottom:.8rem;}
+    .hero-price{margin:1rem 0 .5rem;font-family:var(--font-h);}
+    .hero-price-label{font-size:.75rem;color:var(--gray);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;}
+    .hero-price-amount{font-size:2.2rem;font-weight:800;color:var(--white);}
+    .hero-price-amount span{font-size:1.1rem;font-weight:400;color:var(--gray);}
+    .hero-price-note{font-size:.78rem;color:var(--gray);margin-top:.3rem;}
+    .hero-stock{font-size:.82rem;color:#f59e0b;font-weight:500;margin-top:.8rem;}
+    .hero-stock strong{color:#fbbf24;}
+    .card-version-pill{position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.22rem .9rem;border-radius:50px;white-space:nowrap;}
+    .card-version-pill.pill-a{background:#1e3a5f;color:#93c5fd;border:1px solid rgba(59,130,246,.4);}
+    .card-version-pill.pill-b{background:#0f3020;color:#4ade80;border:1px solid rgba(37,211,102,.4);}
 
-    /* === TAG LABEL === */
-    .tag {
-      display: inline-block;
-      font-size: .7rem;
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--blue);
-      background: var(--blue-glow);
-      border: 1px solid rgba(59,130,246,.28);
-      padding: .28rem .85rem;
-      border-radius: 50px;
-      margin-bottom: 1rem;
-    }
+    /* PROBLEM */
+    #problema{background:var(--dark);}
+    .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;}
+    @media(max-width:640px){.problem-grid{grid-template-columns:1fr;}}
+    .problem-card{background:var(--coal);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;}
+    .problem-card .icon{font-size:2.2rem;margin-bottom:.85rem;}
+    .problem-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;}
+    .problem-card p{font-size:.93rem;color:var(--gray);}
+    .problem-solution{margin-top:3rem;background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(37,211,102,.06));border:1px solid rgba(59,130,246,.2);border-radius:var(--radius);padding:2rem 2.2rem;font-size:1.08rem;font-weight:500;}
+    .problem-solution strong{color:var(--blue);}
 
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 800;
-      margin-bottom: .9rem;
-    }
-    .section-subtitle {
-      color: var(--gray);
-      font-size: 1.05rem;
-      max-width: 560px;
-    }
+    /* BENEFITS */
+    .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.4rem;margin-top:3rem;}
+    .benefit-card{background:var(--dark);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.4rem;transition:transform .2s,border-color .2s,box-shadow .2s;}
+    .benefit-card:hover{transform:translateY(-4px);border-color:rgba(59,130,246,.35);box-shadow:0 12px 30px rgba(0,0,0,.25);}
+    .benefit-card .icon{font-size:2.2rem;margin-bottom:.8rem;}
+    .benefit-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;}
+    .benefit-card p{font-size:.88rem;color:var(--gray);}
+    .benefits-cta{text-align:center;margin-top:3rem;}
 
-    /* === WHATSAPP BUTTON === */
-    .btn-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: .55rem;
-      background: var(--green);
-      color: #fff;
-      font-family: var(--font-h);
-      font-weight: 700;
-      font-size: 1rem;
-      padding: .88rem 1.9rem;
-      border-radius: 50px;
-      transition: transform .2s, box-shadow .2s, background .2s;
-      box-shadow: 0 4px 22px rgba(37,211,102,.28);
-      white-space: nowrap;
-    }
-    .btn-wa:hover, .btn-wa:focus {
-      background: var(--green-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(37,211,102,.38);
-      outline: none;
-    }
-    .btn-wa--lg {
-      font-size: 1.15rem;
-      padding: 1.1rem 2.4rem;
-    }
-    @media (max-width: 600px) {
-      .btn-wa { width: 100%; justify-content: center; }
-    }
+    /* PRICING */
+    #precio{background:var(--dark);}
+    .pricing-wrapper{margin-top:3rem;display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+    @media(max-width:680px){.pricing-wrapper{grid-template-columns:1fr;}}
+    .pricing-card{background:var(--coal);border:1px solid var(--border);border-radius:20px;padding:2rem 1.8rem;position:relative;transition:border-color .2s;}
+    .pricing-card{cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s;}
+    .pricing-card:hover{border-color:rgba(255,255,255,.18);transform:translateY(-3px);}
+    .pricing-card.selected-a{border-color:rgba(59,130,246,.6);box-shadow:0 0 0 1px rgba(59,130,246,.25);}
+    .pricing-card.selected-b{border-color:rgba(37,211,102,.55);box-shadow:0 0 0 1px rgba(37,211,102,.2);}
+    .pricing-version-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .8rem;border-radius:50px;display:inline-block;margin-bottom:1rem;}
+    .tag-a{background:rgba(59,130,246,.15);color:#93c5fd;border:1px solid rgba(59,130,246,.3);}
+    .tag-b{background:rgba(37,211,102,.1);color:#4ade80;border:1px solid rgba(37,211,102,.3);}
+    .pricing-name{font-family:var(--font-h);font-size:1.2rem;font-weight:800;margin-bottom:.3rem;}
+    .pricing-amount{font-family:var(--font-h);font-size:2.8rem;font-weight:800;margin:.6rem 0 .3rem;}
+    .pricing-amount span{font-size:1.1rem;font-weight:400;color:var(--gray);}
+    .pricing-desc{font-size:.9rem;color:var(--gray);margin-bottom:1.4rem;line-height:1.6;}
+    .pricing-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem;}
+    .pricing-features li{font-size:.9rem;display:flex;align-items:flex-start;gap:.6rem;}
+    .pricing-features li::before{content:'✓';color:#4ade80;font-weight:700;flex-shrink:0;margin-top:.1rem;}
+    .pricing-extra{font-size:.8rem;color:var(--gray);border-top:1px solid var(--border);padding-top:.9rem;margin-top:.4rem;}
+    .active-label{position:absolute;top:-13px;right:1.4rem;background:var(--blue);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .8rem;border-radius:50px;}
+    .pricing-select-hint{text-align:center;font-size:.82rem;color:var(--gray);margin-top:1rem;}
 
-    /* ========================
-       NAVBAR
-    ======================== */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(17,18,20,.85);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 60px;
-    }
-    .nav-logo {
-      font-family: var(--font-h);
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -.02em;
-    }
-    .nav-logo span { color: var(--blue); }
-    .nav-cta { font-size: .82rem; padding: .5rem 1.2rem; }
+    /* STEPS */
+    #como{background:var(--dark);}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.6rem;margin-top:3rem;}
+    .step{text-align:center;padding:2rem 1.4rem;background:var(--coal);border:1px solid var(--border);border-radius:var(--radius);}
+    .step-num{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-h);font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;box-shadow:0 0 18px rgba(59,130,246,.4);}
+    .step h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;}
+    .step p{font-size:.88rem;color:var(--gray);}
 
-    /* ========================
-       HERO
-    ======================== */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 60px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 700px 500px at 70% 40%, rgba(59,130,246,.09) 0%, transparent 70%),
-        radial-gradient(ellipse 400px 400px at 20% 80%, rgba(37,211,102,.05) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      padding: 4rem 0;
-    }
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-actions { justify-content: center; }
-      .hero-trust { justify-content: center; }
-    }
-    .hero-title {
-      font-size: clamp(2.6rem, 6.5vw, 4.2rem);
-      font-weight: 800;
-      letter-spacing: -.03em;
-      margin-bottom: 1.2rem;
-    }
-    .hero-title em { font-style: normal; color: var(--blue); }
-    .hero-desc {
-      color: var(--gray);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      max-width: 480px;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .85rem;
-      margin-bottom: 2rem;
-    }
-    .hero-trust {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: .82rem;
-      color: var(--gray);
-    }
-    .hero-trust-item { display: flex; align-items: center; gap: .35rem; }
+    /* TESTIMONIALS */
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;margin-top:3rem;}
+    .testimonial{background:var(--dark);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;}
+    .stars{font-size:1rem;margin-bottom:.85rem;}
+    .testimonial blockquote{font-size:.97rem;margin-bottom:1rem;font-style:italic;}
+    .testimonial cite{font-size:.82rem;color:var(--gray);font-style:normal;font-weight:600;}
 
-    .hero-visual { display: flex; justify-content: center; align-items: center; }
-    .hero-card {
-      background: var(--mid);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 2.5rem 2rem;
-      width: 100%;
-      max-width: 360px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,.4);
-      position: relative;
-    }
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      top: -1px; left: 30%; right: 30%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--blue), transparent);
-    }
-    .hero-brush-icon {
-      font-size: 5.5rem;
-      line-height: 1;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 20px rgba(59,130,246,.4));
-    }
-    .hero-card-title { font-family: var(--font-h); font-size: 1.4rem; font-weight: 800; margin-bottom: .4rem; }
-    .hero-card-sub   { font-size: .9rem; color: var(--gray); margin-bottom: 1.4rem; }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(37,211,102,.1);
-      border: 1px solid rgba(37,211,102,.25);
-      color: #4ade80;
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: .3rem .8rem;
-      border-radius: 50px;
-      margin-bottom: .8rem;
-    }
-    .hero-stock { font-size: .82rem; color: #f59e0b; font-weight: 500; }
-    .hero-stock strong { color: #fbbf24; }
+    /* FAQ */
+    #faq{background:var(--dark);}
+    .faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:1rem;}
+    .faq-item{background:var(--coal);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+    .faq-q{width:100%;text-align:left;background:none;border:none;color:var(--light);font-family:var(--font-h);font-weight:600;font-size:1rem;padding:1.2rem 1.4rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+    .faq-q:hover{color:var(--blue);}
+    .faq-q .arrow{transition:transform .25s;font-style:normal;}
+    .faq-item.open .faq-q .arrow{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;font-size:.95rem;color:var(--gray);padding:0 1.4rem;}
+    .faq-item.open .faq-a{max-height:220px;padding:0 1.4rem 1.2rem;}
 
-    /* ========================
-       PROBLEM
-    ======================== */
-    #problema { background: var(--dark); }
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    @media (max-width: 640px) { .problem-grid { grid-template-columns: 1fr; } }
-    .problem-card {
-      background: var(--coal);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.8rem;
-    }
-    .problem-card .icon { font-size: 2.2rem; margin-bottom: .85rem; }
-    .problem-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
-    .problem-card p  { font-size: .93rem; color: var(--gray); }
-    .problem-solution {
-      margin-top: 3rem;
-      background: linear-gradient(135deg, rgba(59,130,246,.1), rgba(37,211,102,.06));
-      border: 1px solid rgba(59,130,246,.2);
-      border-radius: var(--radius);
-      padding: 2rem 2.2rem;
-      font-size: 1.08rem;
-      font-weight: 500;
-    }
-    .problem-solution strong { color: var(--blue); }
+    /* ENCUESTA */
+    #encuesta{background:var(--coal);}
+    .survey-box{max-width:680px;margin:3rem auto 0;background:var(--dark);border:1px solid var(--border);border-radius:20px;padding:2.5rem 2rem;}
+    .survey-intro{font-size:.85rem;color:var(--gray);margin-bottom:2rem;padding:.9rem 1.2rem;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.18);border-radius:10px;line-height:1.6;}
+    .survey-q{margin-bottom:1.8rem;}
+    .survey-q-label{font-family:var(--font-h);font-weight:700;font-size:.97rem;margin-bottom:.85rem;}
+    .survey-q-label span{color:var(--blue);margin-right:.4rem;}
+    .options-grid{display:flex;flex-wrap:wrap;gap:.6rem;}
+    .opt-btn{background:var(--coal);border:1px solid var(--border);color:var(--light);font-family:var(--font-b);font-size:.88rem;padding:.5rem 1.1rem;border-radius:50px;cursor:pointer;transition:border-color .2s,background .2s,color .2s;}
+    .opt-btn:hover{border-color:rgba(59,130,246,.5);background:rgba(59,130,246,.08);}
+    .opt-btn.selected{background:var(--blue);border-color:var(--blue);color:#fff;}
+    .survey-submit{width:100%;margin-top:1.4rem;padding:.9rem;background:var(--blue);color:#fff;font-family:var(--font-h);font-weight:700;font-size:1rem;border:none;border-radius:50px;cursor:pointer;transition:background .2s,transform .15s;}
+    .survey-submit:hover{background:var(--blue-dark);transform:translateY(-1px);}
+    .survey-submit:disabled{opacity:.45;cursor:not-allowed;transform:none;}
+    .survey-thanks{display:none;text-align:center;padding:2rem 0;}
+    .survey-thanks .thanks-icon{font-size:3rem;margin-bottom:1rem;}
+    .survey-thanks h3{font-family:var(--font-h);font-size:1.5rem;font-weight:800;margin-bottom:.6rem;}
+    .survey-thanks p{color:var(--gray);font-size:.95rem;}
+    .survey-progress{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem;font-size:.8rem;color:var(--gray);}
+    .progress-bar{flex:1;height:3px;background:var(--border);border-radius:4px;margin:0 .8rem;}
+    .progress-fill{height:100%;background:var(--blue);border-radius:4px;transition:width .3s;}
 
-    /* ========================
-       BENEFITS
-    ======================== */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 1.4rem;
-      margin-top: 3rem;
-    }
-    .benefit-card {
-      background: var(--dark);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.6rem 1.4rem;
-      transition: transform .2s, border-color .2s, box-shadow .2s;
-    }
-    .benefit-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(59,130,246,.35);
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
-    }
-    .benefit-card .icon { font-size: 2.2rem; margin-bottom: .8rem; }
-    .benefit-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
-    .benefit-card p  { font-size: .88rem; color: var(--gray); }
-    .benefits-cta { text-align: center; margin-top: 3rem; }
+    /* CTA FINAL */
+    #cta-final{background:linear-gradient(135deg,#0f1117 0%,#131821 100%);text-align:center;position:relative;overflow:hidden;}
+    #cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 50% 50%,rgba(59,130,246,.07),transparent 65%);pointer-events:none;}
+    .urgency-box{position:relative;z-index:1;max-width:640px;margin:0 auto;}
+    .urgency-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:#fbbf24;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1.4rem;}
+    .urgency-box h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:1rem;}
+    .urgency-box p{color:var(--gray);font-size:1.05rem;margin-bottom:2rem;}
+    .cta-final-btn{margin-bottom:1.2rem;}
+    .cta-note{font-size:.82rem;color:var(--gray);}
 
-    /* ========================
-       HOW IT WORKS
-    ======================== */
-    #como { background: var(--dark); }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1.6rem;
-      margin-top: 3rem;
-    }
-    .step {
-      text-align: center;
-      padding: 2rem 1.4rem;
-      background: var(--coal);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-    .step-num {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--blue);
-      color: #fff;
-      font-family: var(--font-h);
-      font-weight: 800;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      box-shadow: 0 0 18px rgba(59,130,246,.4);
-    }
-    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
-    .step p   { font-size: .88rem; color: var(--gray); }
+    /* FOOTER */
+    footer{background:var(--coal);border-top:1px solid var(--border);padding:2.5rem 0;}
+    .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.2rem;}
+    .footer-logo{font-family:var(--font-h);font-weight:800;font-size:1.1rem;}
+    .footer-logo span{color:var(--blue);}
+    .footer-links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.85rem;color:var(--gray);}
+    .footer-links a:hover{color:var(--light);}
+    .footer-copy{width:100%;text-align:center;font-size:.78rem;color:var(--gray);margin-top:.8rem;}
 
-    /* ========================
-       TESTIMONIALS
-    ======================== */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.4rem;
-      margin-top: 3rem;
-    }
-    .testimonial {
-      background: var(--dark);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.8rem;
-    }
-    .stars { font-size: 1rem; margin-bottom: .85rem; }
-    .testimonial blockquote {
-      font-size: .97rem;
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-    .testimonial cite { font-size: .82rem; color: var(--gray); font-style: normal; font-weight: 600; }
-
-    /* ========================
-       FAQ
-    ======================== */
-    #faq { background: var(--dark); }
-    .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; }
-    .faq-item {
-      background: var(--coal);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .faq-q {
-      width: 100%;
-      text-align: left;
-      background: none;
-      border: none;
-      color: var(--light);
-      font-family: var(--font-h);
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 1.2rem 1.4rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-    .faq-q:hover { color: var(--blue); }
-    .faq-q .arrow { transition: transform .25s; font-style: normal; }
-    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .3s ease, padding .3s;
-      font-size: .95rem;
-      color: var(--gray);
-      padding: 0 1.4rem;
-    }
-    .faq-item.open .faq-a { max-height: 200px; padding: 0 1.4rem 1.2rem; }
-
-    /* ========================
-       CTA FINAL
-    ======================== */
-    #cta-final {
-      background: linear-gradient(135deg, #0f1117 0%, #131821 100%);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    #cta-final::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 800px 400px at 50% 50%, rgba(59,130,246,.07), transparent 65%);
-      pointer-events: none;
-    }
-    .urgency-box { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
-    .urgency-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: rgba(251,191,36,.1);
-      border: 1px solid rgba(251,191,36,.3);
-      color: #fbbf24;
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .35rem 1rem;
-      border-radius: 50px;
-      margin-bottom: 1.4rem;
-    }
-    .urgency-box h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 1rem; }
-    .urgency-box p  { color: var(--gray); font-size: 1.05rem; margin-bottom: 2rem; }
-    .cta-final-btn  { margin-bottom: 1.2rem; }
-    .cta-note { font-size: .82rem; color: var(--gray); }
-
-    /* ========================
-       FOOTER
-    ======================== */
-    footer {
-      background: var(--coal);
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 0;
-    }
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.2rem;
-    }
-    .footer-logo { font-family: var(--font-h); font-weight: 800; font-size: 1.1rem; }
-    .footer-logo span { color: var(--blue); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 1.2rem; font-size: .85rem; color: var(--gray); }
-    .footer-links a:hover { color: var(--light); }
-    .footer-copy { width: 100%; text-align: center; font-size: .78rem; color: var(--gray); margin-top: .8rem; }
-
-    /* ========================
-       SCROLL REVEAL
-    ======================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .55s ease, transform .55s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav aria-label="Navegación principal">
     <div class="container nav-inner">
-      <span class="nav-logo">Xylon<span>Brush</span></span>
-      <a class="btn-wa nav-cta"
-         href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20Xylon%20Brush.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n."
+      <div style="display:flex;align-items:center;gap:.75rem;">
+        <span class="nav-logo">Xylon<span>Brush</span></span>
+        <span class="version-badge" id="nav-version-badge"></span>
+      </div>
+      <a class="btn-wa nav-cta" id="nav-cta-btn"
+         href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20Xylon%20Brush."
          target="_blank" rel="noopener">
         💬 Quiero el mío
       </a>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section id="hero" aria-label="Inicio">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-inner">
-
         <div class="hero-text">
-          <p class="tag">🌿 Primer lote limitado — 100 unidades</p>
+          <p class="tag" id="hero-tag">🦷 Cepillo inteligente para odontología</p>
           <h1 class="hero-title">
-            Cuida tu sonrisa.<br/>
-            <em>Cuida el planeta.</em>
+            Higiene oral inteligente.<br/>
+            <em id="hero-title-em">Tecnología que cuida.</em>
           </h1>
-          <p class="hero-desc">
-            Xylon Brush es el cepillo dental ecológico con mango 100% biodegradable y
-            tecnología antibacteriana natural. Higiene oral profesional que reduce tu impacto ambiental.
-          </p>
+          <p class="hero-desc" id="hero-desc">XylonBrush es el cepillo dental con funciones inteligentes, diseñado para tratamientos odontológicos. Recomendado por profesionales.</p>
           <div class="hero-actions">
-            <a class="btn-wa btn-wa--lg"
-               href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20Xylon%20Brush.%20Quisiera%20reservar%20el%20m%C3%ADo%20antes%20de%20que%20se%20agote."
-               target="_blank" rel="noopener">
-              📱 Quiero mi Xylon Brush
-            </a>
+            <a class="btn-wa btn-wa--lg" id="hero-cta-btn"
+               href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20XylonBrush."
+               target="_blank" rel="noopener">📱 Quiero mi XylonBrush</a>
           </div>
           <div class="hero-trust">
-            <div class="hero-trust-item"><span>🌿</span><span>Eco-friendly</span></div>
-            <div class="hero-trust-item"><span>🦠</span><span>Antibacteriano</span></div>
-            <div class="hero-trust-item"><span>♻️</span><span>Biodegradable</span></div>
+            <div class="hero-trust-item"><span>🧠</span><span>Tecnología inteligente</span></div>
+            <div class="hero-trust-item"><span>🦷</span><span>Uso odontológico</span></div>
+            <div class="hero-trust-item"><span>✔</span><span>Recomendado</span></div>
           </div>
         </div>
-
         <div class="hero-visual">
           <div class="hero-card">
+            <span class="card-version-pill" id="card-version-pill"></span>
             <div class="hero-brush-icon" aria-hidden="true">🪥</div>
             <div class="hero-badge">✔ Disponible ahora</div>
-            <div class="hero-card-title">Xylon Brush</div>
-            <div class="hero-card-sub">Cepillo Ecológico &amp; Antibacteriano</div>
+            <div class="hero-card-title">XylonBrush</div>
+            <div class="hero-card-sub" id="card-sub">Cepillo Inteligente para Odontología</div>
+            <div class="hero-price">
+              <div class="hero-price-label">Precio de lanzamiento</div>
+              <div class="hero-price-amount" id="hero-price-amount">— <span>MXN</span></div>
+              <div class="hero-price-note" id="hero-price-note"></div>
+            </div>
             <div class="hero-stock">⚠️ Solo <strong>100 unidades</strong> en este lote</div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- PROBLEMA -->
   <section id="problema" class="section" aria-labelledby="problema-title">
     <div class="container">
       <div class="reveal">
         <p class="tag">El Problema</p>
-        <h2 class="section-title" id="problema-title">¿Sabes lo que usas cada día?</h2>
-        <p class="section-subtitle">
-          Millones de cepillos de plástico terminan en vertederos y océanos cada año.
-          El cepillo que usas hoy podría seguir contaminando por décadas.
-        </p>
+        <h2 class="section-title" id="problema-title">La higiene bucal convencional ya no es suficiente</h2>
+        <p class="section-subtitle">Los cepillos tradicionales no están diseñados para apoyar tratamientos odontológicos activos. Los pacientes y estudiantes merecen mejores herramientas.</p>
       </div>
       <div class="problem-grid reveal">
         <div class="problem-card">
-          <div class="icon" aria-hidden="true">🌊</div>
-          <h3>Contaminación plástica</h3>
-          <p>Más de 4,700 millones de cepillos plásticos se desechan globalmente cada año, acumulándose en océanos y suelos.</p>
+          <div class="icon" aria-hidden="true">🦷</div>
+          <h3>Sin soporte para tratamientos</h3>
+          <p>Pacientes con brackets, implantes o tratamientos activos usan cepillos genéricos que no optimizan su higiene bucal.</p>
         </div>
         <div class="problem-card">
-          <div class="icon" aria-hidden="true">🦠</div>
-          <h3>Bacterias ocultas</h3>
-          <p>Los cepillos convencionales acumulan bacterias con rapidez y pierden efectividad antes de que los cambiemos.</p>
+          <div class="icon" aria-hidden="true">📚</div>
+          <h3>Estudiantes sin herramientas profesionales</h3>
+          <p>Los estudiantes de odontología practican con equipos de clínica pero no tienen acceso a tecnología inteligente para uso diario.</p>
         </div>
       </div>
       <div class="problem-solution reveal">
-        <p>💡 <strong>Xylon Brush</strong> combina sostenibilidad ambiental con <strong>tecnología antibacteriana natural</strong>, ofreciendo una limpieza profesional mientras reduces tu huella ecológica.</p>
+        <p>💡 <strong>XylonBrush</strong> combina <strong>funciones inteligentes adaptadas a tratamientos odontológicos</strong> con un diseño pensado para estudiantes, pacientes y uso diario profesional.</p>
       </div>
     </div>
   </section>
 
-  <!-- BENEFICIOS -->
   <section id="beneficios" class="section" aria-labelledby="beneficios-title">
     <div class="container">
       <div class="reveal">
         <p class="tag">Beneficios</p>
-        <h2 class="section-title" id="beneficios-title">Todo lo que tu sonrisa merece</h2>
-        <p class="section-subtitle">Diseñado para quienes cuidan su salud bucal sin comprometer el planeta.</p>
+        <h2 class="section-title" id="beneficios-title">Todo lo que tu higiene bucal merece</h2>
+        <p class="section-subtitle">Diseñado con tecnología avanzada para quienes toman en serio su salud dental.</p>
       </div>
       <div class="benefits-grid">
         <div class="benefit-card reveal">
-          <div class="icon" aria-hidden="true">🌳</div>
-          <h3>100% Biodegradable</h3>
-          <p>Mango de madera de xylon que se descompone naturalmente, sin dejar residuos plásticos.</p>
+          <div class="icon" aria-hidden="true">🧠</div>
+          <h3>Función inteligente</h3>
+          <p>Sensores que detectan presión de cepillado y optimizan la limpieza según el tipo de tratamiento activo.</p>
         </div>
         <div class="benefit-card reveal">
           <div class="icon" aria-hidden="true">🦷</div>
-          <h3>Cerdas Protectoras</h3>
-          <p>Cerdas suaves de alta duración que cuidan encías sensibles con cada cepillado.</p>
+          <h3>Cerdas especializadas</h3>
+          <p>Diseñadas para trabajar alrededor de brackets, implantes y encías sensibles sin comprometer la eficiencia.</p>
         </div>
         <div class="benefit-card reveal">
           <div class="icon" aria-hidden="true">🛡️</div>
-          <h3>Antibacteriano Natural</h3>
-          <p>Propiedades antibacterianas inherentes a la madera que mantienen el cepillo más limpio por más tiempo.</p>
+          <h3>Antibacteriano avanzado</h3>
+          <p>Tecnología que inhibe el crecimiento bacteriano, prolongando la vida útil y protegiendo tu salud.</p>
         </div>
         <div class="benefit-card reveal">
           <div class="icon" aria-hidden="true">✋</div>
-          <h3>Diseño Ergonómico</h3>
-          <p>Agarre cómodo y equilibrado para un cepillado eficaz y sin esfuerzo en adultos y jóvenes.</p>
+          <h3>Ergonomía clínica</h3>
+          <p>Agarre diseñado con retroalimentación de ergónomos dentales para un cepillado profesional en casa.</p>
         </div>
         <div class="benefit-card reveal">
-          <div class="icon" aria-hidden="true">♻️</div>
-          <h3>Menos Plástico</h3>
-          <p>Cada Xylon Brush que usas es un cepillo plástico menos en el océano. Pequeño gesto, gran impacto.</p>
+          <div class="icon" aria-hidden="true">📊</div>
+          <h3>Seguimiento de hábitos</h3>
+          <p>Conecta con la app y registra tu progreso de higiene para compartir con tu odontólogo en cada cita.</p>
         </div>
       </div>
       <div class="benefits-cta reveal">
-        <a class="btn-wa"
-           href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20Xylon%20Brush.%20Me%20gustar%C3%ADa%20reservar%20una%20unidad%20del%20primer%20lote."
-           target="_blank" rel="noopener">
-          📱 Quiero mi Xylon Brush
-        </a>
+        <a class="btn-wa" id="benefits-cta-btn"
+           href="https://wa.me/524631035965?text=Hola%2C%20me%20interesa%20XylonBrush."
+           target="_blank" rel="noopener">📱 Quiero mi XylonBrush</a>
       </div>
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA -->
+  <!-- SECCIÓN DE PRECIO A/B -->
+  <section id="precio" class="section" aria-labelledby="precio-title">
+    <div class="container">
+      <div class="reveal">
+        <p class="tag">Precio de Lanzamiento</p>
+        <h2 class="section-title" id="precio-title">Elige tu XylonBrush</h2>
+        <p class="section-subtitle" id="precio-subtitle"></p>
+      </div>
+      <div class="pricing-wrapper reveal">
+        <div class="pricing-card" id="pricing-a" onclick="selectVersion('A')">
+          <span class="pricing-version-tag tag-a">Versión A · Premium</span>
+          <div class="pricing-name">XylonBrush Pro</div>
+          <div class="pricing-amount">$5,000 <span>MXN</span></div>
+          <p class="pricing-desc">Experiencia completa con plan premium mensual, soporte personalizado y recomendación profesional incluida desde el primer día.</p>
+          <ul class="pricing-features">
+            <li>Cepillo XylonBrush con todas las funciones inteligentes</li>
+            <li>Plan premium mensual incluido (1er mes)</li>
+            <li>Recomendación y seguimiento profesional</li>
+            <li>Aditamentos especializados incluidos</li>
+            <li>Soporte prioritario por WhatsApp</li>
+          </ul>
+          <div class="pricing-extra">🎓 Incluye guía de uso en tratamientos odontológicos</div>
+        </div>
+        <div class="pricing-card" id="pricing-b" onclick="selectVersion('B')">
+          <span class="pricing-version-tag tag-b">Versión B · Accesible</span>
+          <div class="pricing-name">XylonBrush</div>
+          <div class="pricing-amount">$2,199 <span>MXN</span></div>
+          <p class="pricing-desc">Todas las funciones inteligentes al precio más accesible para estudiantes, pacientes y uso diario. Los aditamentos se adquieren por separado.</p>
+          <ul class="pricing-features">
+            <li>Cepillo XylonBrush con funciones inteligentes completas</li>
+            <li>Acceso a la app de seguimiento incluido</li>
+            <li>Compatible con todos los aditamentos disponibles</li>
+            <li>Ideal para estudiantes de odontología</li>
+            <li>Soporte estándar por WhatsApp</li>
+          </ul>
+          <div class="pricing-extra">🔌 Plan premium y aditamentos se venden por separado</div>
+        </div>
+      </div>
+      <p class="pricing-select-hint reveal" id="pricing-hint">👆 Haz clic en la opción que preferirías comprar</p>
+    </div>
+  </section>
+
   <section id="como" class="section" aria-labelledby="como-title">
     <div class="container">
       <div class="reveal">
         <p class="tag">Cómo Funciona</p>
         <h2 class="section-title" id="como-title">Tan sencillo como cepillarte</h2>
-        <p class="section-subtitle">Consigue tu Xylon Brush y empieza a marcar la diferencia desde hoy.</p>
+        <p class="section-subtitle">Consigue tu XylonBrush y transforma tu rutina dental desde hoy.</p>
       </div>
       <div class="steps">
         <div class="step reveal">
@@ -626,14 +382,13 @@
         </div>
         <div class="step reveal">
           <div class="step-num" aria-label="Paso 4">4</div>
-          <h3>Sonríe con impacto</h3>
-          <p>Disfruta de higiene oral superior mientras contribuyes a un planeta más limpio cada día.</p>
+          <h3>Mejora tu higiene dental</h3>
+          <p>Disfruta de higiene oral superior con tecnología inteligente adaptada a tu tratamiento.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
   <section id="testimonios" class="section" aria-labelledby="testimonios-title">
     <div class="container">
       <div class="reveal">
@@ -643,24 +398,23 @@
       <div class="testimonials-grid">
         <div class="testimonial reveal">
           <div class="stars" aria-label="5 de 5 estrellas">⭐⭐⭐⭐⭐</div>
-          <blockquote>"Me encanta saber que estoy cuidando mis dientes y el planeta al mismo tiempo."</blockquote>
-          <cite>— Laura M.</cite>
+          <blockquote>"Tengo brackets y el XylonBrush cambió completamente mi rutina. Mis encías nunca habían estado tan sanas."</blockquote>
+          <cite>— Laura M., paciente ortodoncia</cite>
         </div>
         <div class="testimonial reveal">
           <div class="stars" aria-label="5 de 5 estrellas">⭐⭐⭐⭐⭐</div>
-          <blockquote>"Nunca pensé que cambiar mi cepillo pudiera ser un acto tan consciente. Xylon Brush lo hace fácil."</blockquote>
-          <cite>— Rodrigo S.</cite>
+          <blockquote>"Como estudiante de odontología, usar tecnología inteligente en mi rutina diaria es invaluable para mi aprendizaje."</blockquote>
+          <cite>— Rodrigo S., estudiante 5to año</cite>
         </div>
         <div class="testimonial reveal">
           <div class="stars" aria-label="5 de 5 estrellas">⭐⭐⭐⭐⭐</div>
-          <blockquote>"Las cerdas son súper suaves para mis encías y el diseño se ve muy premium. ¡Lo recomiendo al 100%!"</blockquote>
-          <cite>— Sofía V.</cite>
+          <blockquote>"Lo recomiendo a todos mis pacientes. La diferencia en higiene entre citas es notablemente mejor con este cepillo."</blockquote>
+          <cite>— Dra. Sofía V., odontóloga</cite>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
   <section id="faq" class="section" aria-labelledby="faq-title">
     <div class="container">
       <div class="reveal">
@@ -670,64 +424,123 @@
       <div class="faq-list reveal">
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
-            ¿Cuánto tiempo dura el cepillo?
+            ¿Cuáles son las funciones inteligentes del XylonBrush?
             <i class="arrow" aria-hidden="true">▾</i>
           </button>
           <div class="faq-a" id="faq-a1" role="region">
-            Xylon Brush dura entre 2 y 3 meses con uso regular, igual que un cepillo convencional de calidad. Las cerdas de alta duración mantienen su efectividad durante todo ese período.
+            XylonBrush cuenta con sensor de presión, temporizador cuadrante de 2 minutos, detección de zona de cepillado y sincronización con app para seguimiento. Ideal para pacientes con tratamientos activos y estudiantes de odontología.
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
-            ¿Las cerdas son realmente antibacterianas?
+            ¿Cuál es la diferencia entre la Versión A y la Versión B?
             <i class="arrow" aria-hidden="true">▾</i>
           </button>
           <div class="faq-a" id="faq-a2" role="region">
-            Sí. La madera de xylon tiene propiedades antibacterianas naturales que inhiben el crecimiento de bacterias en el mango. Las cerdas están fabricadas con materiales de alta higiene que no retienen humedad ni bacterias.
+            Las funciones inteligentes son exactamente las mismas en ambas versiones. La Versión A ($5,000 MXN) incluye plan premium mensual, aditamentos especializados y recomendación profesional. La Versión B ($2,199 MXN) incluye el cepillo con todas sus funciones; los aditamentos y plan premium se adquieren por separado.
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
-            ¿Es apto para niños?
+            ¿Es compatible con tratamientos de ortodoncia?
             <i class="arrow" aria-hidden="true">▾</i>
           </button>
           <div class="faq-a" id="faq-a3" role="region">
-            Esta versión está diseñada para adultos y jóvenes. Estamos trabajando en una versión específica para niños. ¡Escríbenos para saber cuándo estará disponible!
+            Sí, el XylonBrush está diseñado para brackets metálicos, carillas, implantes y alineadores. Sus cerdas especializadas y el sensor de presión lo hacen ideal para estos casos.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a4">
+            ¿Tienen descuento para estudiantes de odontología?
+            <i class="arrow" aria-hidden="true">▾</i>
+          </button>
+          <div class="faq-a" id="faq-a4" role="region">
+            Sí, tenemos precio especial para estudiantes con credencial vigente. Escríbenos por WhatsApp y te enviamos el precio de acceso estudiantil.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- ENCUESTA DE INTENCIÓN DE COMPRA -->
+  <section id="encuesta" class="section" aria-labelledby="encuesta-title">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <p class="tag">Tu opinión importa</p>
+        <h2 class="section-title" id="encuesta-title">¿Lo comprarías?</h2>
+        <p class="section-subtitle" style="margin:0 auto;">Ayúdanos a definir el precio final respondiendo 3 preguntas rápidas. Tu opinión tiene impacto directo.</p>
+      </div>
+      <div class="survey-box reveal">
+        <div class="survey-intro" id="survey-intro-box">
+          Estás viendo la <strong id="survey-version-label"></strong>. Responde basándote en lo que viste en esta página.
+        </div>
+        <div class="survey-progress">
+          <span id="progress-text">Pregunta 1 de 3</span>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:33%"></div></div>
+          <span id="progress-pct">33%</span>
+        </div>
+        <div class="survey-q" id="sq1">
+          <div class="survey-q-label"><span>1.</span> ¿Comprarías el XylonBrush al precio que viste?</div>
+          <div class="options-grid">
+            <button class="opt-btn" data-q="q1" data-v="Sí, definitivamente lo compraría">Sí, definitivamente</button>
+            <button class="opt-btn" data-q="q1" data-v="Probablemente sí">Probablemente sí</button>
+            <button class="opt-btn" data-q="q1" data-v="No lo sé todavía">No lo sé todavía</button>
+            <button class="opt-btn" data-q="q1" data-v="Probablemente no">Probablemente no</button>
+            <button class="opt-btn" data-q="q1" data-v="No lo compraría">No lo compraría</button>
+          </div>
+        </div>
+        <div class="survey-q" id="sq2">
+          <div class="survey-q-label"><span>2.</span> ¿Cómo consideras el precio que viste?</div>
+          <div class="options-grid">
+            <button class="opt-btn" data-q="q2" data-v="Muy accesible">Muy accesible</button>
+            <button class="opt-btn" data-q="q2" data-v="Accesible">Accesible</button>
+            <button class="opt-btn" data-q="q2" data-v="Justo por lo que ofrece">Justo</button>
+            <button class="opt-btn" data-q="q2" data-v="Caro">Caro</button>
+            <button class="opt-btn" data-q="q2" data-v="Demasiado caro">Demasiado caro</button>
+          </div>
+        </div>
+        <div class="survey-q" id="sq3">
+          <div class="survey-q-label"><span>3.</span> ¿Pagarías plan premium mensual o aditamentos adicionales?</div>
+          <div class="options-grid">
+            <button class="opt-btn" data-q="q3" data-v="Sí, me interesa el plan premium mensual">Sí, plan mensual</button>
+            <button class="opt-btn" data-q="q3" data-v="Sí, compraría aditamentos por separado">Sí, aditamentos</button>
+            <button class="opt-btn" data-q="q3" data-v="Solo quiero el cepillo básico">Solo el cepillo</button>
+            <button class="opt-btn" data-q="q3" data-v="Dependería del precio de los extras">Depende del precio</button>
+            <button class="opt-btn" data-q="q3" data-v="No pagaría extras">No pagaría extras</button>
+          </div>
+        </div>
+        <button class="survey-submit" id="survey-submit" disabled>Enviar respuestas</button>
+        <div class="survey-thanks" id="survey-thanks">
+          <div class="thanks-icon">🙌</div>
+          <h3>¡Gracias por tu respuesta!</h3>
+          <p>Tu opinión nos ayuda a definir el precio final del XylonBrush. Los resultados se publicarán pronto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="cta-final" class="section" aria-labelledby="cta-title">
     <div class="container">
       <div class="urgency-box">
         <div class="urgency-badge reveal">🔥 Oferta de lanzamiento · Lote limitado</div>
         <h2 class="reveal" id="cta-title">Solo 100 unidades en este primer lote</h2>
-        <p class="reveal">
-          El precio de lanzamiento es exclusivo para quienes se registren ahora.
-          Una vez agotado el lote, el precio sube. No dejes pasar tu lugar.
-        </p>
+        <p class="reveal" id="cta-desc">El precio de lanzamiento es exclusivo para quienes se registren ahora. Una vez agotado el lote, el precio sube. No dejes pasar tu lugar.</p>
         <div class="cta-final-btn reveal">
-          <a class="btn-wa btn-wa--lg"
-             href="https://wa.me/524631035965?text=Hola%2C%20quiero%20reservar%20mi%20Xylon%20Brush%20del%20primer%20lote%20al%20precio%20de%20lanzamiento."
-             target="_blank" rel="noopener">
-            📱 Reservar mi Xylon Brush ahora
-          </a>
+          <a class="btn-wa btn-wa--lg" id="cta-final-btn"
+             href="https://wa.me/524631035965?text=Hola%2C%20quiero%20reservar%20mi%20XylonBrush."
+             target="_blank" rel="noopener">📱 Reservar mi XylonBrush ahora</a>
         </div>
         <p class="cta-note reveal">Sin compromiso · Solo por WhatsApp · Atención inmediata</p>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer aria-label="Pie de página">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo">Xylon<span>Brush</span></div>
         <div class="footer-links">
-          <a href="mailto:xylonbrush@gmail.com">✉ xylonbrush@gmail.com</a>
+          <a href="mailto:contacto@xylonbrush.com">✉ contacto@xylonbrush.com</a>
           <a href="https://instagram.com/xylonbrush" target="_blank" rel="noopener">📸 @xylonbrush</a>
           <a href="https://facebook.com/xylonbrush" target="_blank" rel="noopener">👤 Xylon Brush</a>
           <a href="https://wa.me/524631035965" target="_blank" rel="noopener">💬 WhatsApp</a>
@@ -738,19 +551,157 @@
   </footer>
 
   <script>
-    // Scroll Reveal
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealEls.forEach(el => observer.observe(el));
+    /* =========================================================
+       A/B TEST — XylonBrush Pricing
+       Hipótesis: precio accesible + beneficios adicionales
+       aumenta la intención de compra en estudiantes y pacientes.
+    ========================================================= */
 
-    // FAQ Accordion
+    const AB_VERSION = Math.random() < 0.5 ? 'A' : 'B';
+
+    const CONFIG = {
+      A: {
+        price: '$5,000', priceNote: 'Incluye plan premium + aditamentos',
+        tag: '🦷 Innovación especializada · Versión Premium',
+        titleEm: 'Para quienes exigen más.',
+        desc: 'XylonBrush Pro es el cepillo dental inteligente más completo del mercado, con plan premium mensual y aditamentos especializados incluidos. Recomendado por odontólogos.',
+        cardSub: 'Cepillo Inteligente · Versión Premium',
+        ctaText: '📱 Quiero el XylonBrush Pro',
+        wa: 'Hola%2C%20me%20interesa%20el%20XylonBrush%20Pro%20(Versi%C3%B3n%20Premium%20%245%2C000%20MXN).%20Quisiera%20reservar%20una%20unidad.',
+        pricingSubtitle: 'Estás viendo la estrategia premium. El precio refleja una experiencia completa con todo incluido desde el primer día.',
+        ctaDesc: 'El XylonBrush Pro a $5,000 MXN es exclusivo para el primer lote. Precio incluye plan premium y aditamentos. No pierdas tu lugar.',
+        surveyLabel: 'Versión A — XylonBrush Pro a $5,000 MXN (precio premium con todo incluido)',
+      },
+      B: {
+        price: '$2,199', priceNote: 'Funciones inteligentes completas',
+        tag: '🦷 Para estudiantes y pacientes · Accesible',
+        titleEm: 'Al alcance de todos.',
+        desc: 'XylonBrush pone la tecnología inteligente para tratamientos odontológicos al precio más accesible para estudiantes, pacientes y uso diario. Sin sacrificar ninguna función.',
+        cardSub: 'Cepillo Inteligente · Para todos',
+        ctaText: '📱 Quiero mi XylonBrush',
+        wa: 'Hola%2C%20me%20interesa%20el%20XylonBrush%20(Versi%C3%B3n%20Accesible%20%242%2C199%20MXN).%20Quisiera%20reservar%20una%20unidad.',
+        pricingSubtitle: 'Estás viendo la estrategia de precio accesible. Todas las funciones inteligentes al alcance de estudiantes y pacientes.',
+        ctaDesc: 'El XylonBrush a $2,199 MXN es de lanzamiento exclusivo para las primeras 100 unidades. Una vez agotado el lote, el precio sube.',
+        surveyLabel: 'Versión B — XylonBrush a $2,199 MXN (precio accesible, extras por separado)',
+      }
+    };
+
+    function applyVersion(v) {
+      const c = CONFIG[v];
+      const wa = 'https://wa.me/524631035965?text=' + c.wa;
+
+      // Nav badge
+      const badge = document.getElementById('nav-version-badge');
+      badge.textContent = 'Versión ' + v;
+      badge.className = 'version-badge v-' + v.toLowerCase();
+
+      // Hero
+      document.getElementById('hero-tag').textContent = c.tag;
+      document.getElementById('hero-title-em').textContent = c.titleEm;
+      document.getElementById('hero-desc').textContent = c.desc;
+      document.getElementById('hero-price-amount').innerHTML = c.price + ' <span>MXN</span>';
+      document.getElementById('hero-price-note').textContent = c.priceNote;
+      document.getElementById('card-sub').textContent = c.cardSub;
+
+      const pill = document.getElementById('card-version-pill');
+      pill.textContent = 'Versión ' + v;
+      pill.className = 'card-version-pill pill-' + v.toLowerCase();
+
+      // CTAs
+      ['nav-cta-btn','hero-cta-btn','benefits-cta-btn','cta-final-btn'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.href = wa;
+        if (id !== 'nav-cta-btn') el.textContent = c.ctaText;
+      });
+
+      // Pricing
+      document.getElementById('precio-subtitle').textContent = 'Compara ambas opciones y haz clic en la que preferirías comprar. Esto alimentará directamente la encuesta de intención de compra.';
+
+      // Survey
+      document.getElementById('survey-version-label').textContent = 'el precio que selecciones en la sección de precios (👆 arriba)';
+
+      // CTA
+      document.getElementById('cta-desc').textContent = 'El precio de lanzamiento es exclusivo para quienes se registren ahora. Una vez agotado el lote, el precio sube. No dejes pasar tu lugar.';
+    }
+
+    let selectedPricingVersion = null;
+
+    function selectVersion(v) {
+      selectedPricingVersion = v;
+      const c = CONFIG[v];
+
+      // Visual feedback on cards
+      document.getElementById('pricing-a').classList.remove('selected-a','selected-b');
+      document.getElementById('pricing-b').classList.remove('selected-a','selected-b');
+      document.getElementById('pricing-' + v.toLowerCase()).classList.add('selected-' + v.toLowerCase());
+
+      // Update hint
+      const hint = document.getElementById('pricing-hint');
+      hint.textContent = '✓ Seleccionaste la Versión ' + v + ' (' + c.price + ' MXN). Ahora responde la encuesta abajo.';
+      hint.style.color = v === 'A' ? '#93c5fd' : '#4ade80';
+
+      // Update survey label
+      document.getElementById('survey-version-label').textContent =
+        'Versión ' + v + ' — ' + (v === 'A' ? 'XylonBrush Pro a $5,000 MXN (precio premium con todo incluido)' : 'XylonBrush a $2,199 MXN (precio accesible, extras por separado)');
+
+      // Update CTA buttons
+      ['hero-cta-btn','benefits-cta-btn','nav-cta-btn','cta-final-btn'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.href = 'https://wa.me/524631035965?text=' + c.wa;
+        if (id !== 'nav-cta-btn') el.textContent = c.ctaText;
+      });
+
+      // Scroll hint to survey
+      document.getElementById('encuesta').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    applyVersion(AB_VERSION);
+
+    /* ENCUESTA */
+    const answers = { q1: null, q2: null, q3: null };
+
+    document.querySelectorAll('.opt-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.dataset.q;
+        answers[q] = btn.dataset.v;
+        document.querySelectorAll('.opt-btn[data-q="' + q + '"]').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+
+        const answered = Object.values(answers).filter(Boolean).length;
+        const pct = Math.round((answered / 3) * 100);
+        document.getElementById('progress-fill').style.width = pct + '%';
+        document.getElementById('progress-pct').textContent = pct + '%';
+        document.getElementById('progress-text').textContent =
+          answered < 3 ? 'Pregunta ' + (answered + 1) + ' de 3' : '3 de 3 respondidas';
+        document.getElementById('survey-submit').disabled = !(answers.q1 && answers.q2 && answers.q3);
+      });
+    });
+
+    document.getElementById('survey-submit').addEventListener('click', () => {
+      const result = {
+        versionSeleccionada: selectedPricingVersion || 'no seleccionó',
+        precio: selectedPricingVersion ? CONFIG[selectedPricingVersion].price : '—',
+        timestamp: new Date().toISOString(),
+        intencionDeCompra: answers.q1,
+        percepcionPrecio: answers.q2,
+        intencionExtras: answers.q3,
+      };
+      console.log('[XylonBrush A/B Test Result]', JSON.stringify(result, null, 2));
+
+      document.querySelectorAll('.survey-q, #survey-submit, #survey-intro-box, .survey-progress')
+        .forEach(el => el.style.display = 'none');
+      document.getElementById('survey-thanks').style.display = 'block';
+    });
+
+    /* SCROLL REVEAL */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* FAQ ACCORDION */
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -759,13 +710,9 @@
           i.classList.remove('open');
           i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
         });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
       });
     });
   </script>
-
 </body>
 </html>
